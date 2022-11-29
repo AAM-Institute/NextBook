@@ -35,7 +35,7 @@ export const contentMapping = contentFolders.map((part) => {
   return pages.map((page) => ({
     part,
     page: page.replace(/\.mdx?$/, '')
-  }))
+  }));
 })
 
 export const rehypeMetaAsProps = () => {

@@ -20,11 +20,11 @@ export default function HomePage() {
         <p>We can use this page as a homepage/splash page or to redirect to content.</p>
         <p>
           Let&apos;s get started, redirecting you to the{' '}
-          <Link href={docsIndex}>
-            <a className='underline'>documentation</a>
+          <Link href={docsIndex} className='underline'>
+            documentation
           </Link>
         </p>
       </div>
     </div>
-  )
+  );
 }

@@ -62,10 +62,10 @@ export const CustomLink = (props) => {
   }
 
   return (
-    <Link {...props}>
-      <a {...props} className='underline' />
-    </Link>
-  )
+    (<Link {...props} className='underline'>
+
+    </Link>)
+  );
 }
 
 export const CustomImage = (props) => {
@@ -104,7 +104,7 @@ export const Code = (props) => {
       <Highlight lang={language} {...props}>
         {props.children.replace(/\n+$/, '')}
       </Highlight>
-    )
+    );
   }
 
   return (
