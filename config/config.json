@@ -57,6 +57,7 @@
     {
       "part": "Dev101 Contents",
       "path": "/guide/0-programming-mindset",
+      "openByDefault": true,
       "chapters": [
         {
           "title": "Programming Mindset",
