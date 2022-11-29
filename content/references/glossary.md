@@ -1,3 +1,8 @@
+---
+part: references
+title: Glossary
+---
+
 # Glossary
 
 > [_View a more comprehensive glossary_](https://medium.com/progate/a-programmers-dictionary-7b13100a3662)

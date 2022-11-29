@@ -1,4 +1,3 @@
-// TODO: Re-render on route change
 import { useEffect, useState } from 'react';
 import router from 'next/router';
 import Scrollspy from 'components/scrollspy'
@@ -39,14 +38,14 @@ function InPageToc({ tocRaw }) {
   useEffect(()=>{
     setUrl(router.asPath)
 
-    const onHashChangeStart = (url) => {
+    const onHashChangeComplete = (url) => {
         setUrl(url)
     };
 
-    router.events.on("hashChangeStart", onHashChangeStart);
+    router.events.on("hashChangeComplete", onHashChangeComplete);
 
     return () => {
-        router.events.off("hashChangeStart", onHashChangeStart);
+        router.events.off("hashChangeComplete", onHashChangeComplete);
     };
   }, []);
 
