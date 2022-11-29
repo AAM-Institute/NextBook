@@ -25,24 +25,24 @@ const SideBarItem = ({ active, item, onClick, icon }) => {
   return (
     <div className='flex items-center grow mb-1'>
         {item.path ? (
-          <Link href={item.path}>
-            <a
-              style={{userSelect: 'none'}}
-              className={`
-                ${sidebarItemStyle} 
-                ${active && ' font-bold'}
-                ${currentPath && ' current font-bold bg-gray-100 dark:bg-gray-900 '}
-                ${visited ? ' text-gray-600 dark:text-gray-300' : 'text-gray-400 '}
-              `}
-              >
-              <div className='grow pr-2 break-words w-full truncate'>
-                {item.title}
-              </div>
-              {icon ? (
-                <span className='inline-block pr-2' onClick={onClick}>{icon}</span>
-                ) : visited && <span className='inline-block pr-2'><Check /></span>} 
-            </a>
-          </Link>
+          (<Link
+            href={item.path}
+            style={{userSelect: 'none'}}
+            className={`
+              ${sidebarItemStyle} 
+              ${active && ' font-bold'}
+              ${currentPath && ' current font-bold bg-gray-100 dark:bg-gray-900 '}
+              ${visited ? ' text-gray-600 dark:text-gray-300' : 'text-gray-400 '}
+            `}>
+
+            <div className='grow pr-2 break-words w-full truncate'>
+              {item.title}
+            </div>
+            {icon ? (
+              <span className='inline-block pr-2' onClick={onClick}>{icon}</span>
+              ) : visited && <span className='inline-block pr-2'><Check /></span>}
+
+          </Link>)
         ) : (
           <div
             onClick={onClick}
@@ -56,7 +56,7 @@ const SideBarItem = ({ active, item, onClick, icon }) => {
             </div>
         )}
     </div>
-  )
+  );
 }
 
 export default SideBarItem

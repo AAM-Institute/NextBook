@@ -60,37 +60,37 @@ export default function PageNav() {
         }`}
       >
         {prevChapter && (
-          <Link href={prevChapter.path}>
-            <a
-              className={`border border-transparent flex w-1/2 justify-center md:justify-between rounded m-1 p-3 bg-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-gray-600 dark:hover:text-gray-100 ${
-                !nextChapter && 'w-full md:max-w-sm'
-              }`}
-              title={_('Previous chapter')}
-            >
-              <div className='w-4'>
-                <ArrowLeft />
-              </div>
-              <div className='ml-2 truncate'>{prevChapter.title}</div>
-            </a>
-          </Link>
+          (<Link
+            href={prevChapter.path}
+            className={`border border-transparent flex w-1/2 justify-center md:justify-between rounded m-1 p-3 bg-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-gray-600 dark:hover:text-gray-100 ${
+              !nextChapter && 'w-full md:max-w-sm'
+            }`}
+            title={_('Previous chapter')}>
+
+            <div className='w-4'>
+              <ArrowLeft />
+            </div>
+            <div className='ml-2 truncate'>{prevChapter.title}</div>
+
+          </Link>)
         )}
 
         {nextChapter && (
-          <Link href={nextChapter.path}>
-            <a
-              className={`border border-transparent flex w-1/2 justify-center md:justify-between rounded m-1 p-3 bg-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-gray-600 dark:hover:text-gray-100 ${
-                !prevChapter && 'w-full md:max-w-sm'
-              }`}
-              title={_('Next chapter')}
-            >
-              <div className='mr-2 truncate'>{nextChapter.title}</div>
-              <div className='w-4'>
-                <ArrowRight />
-              </div>
-            </a>
-          </Link>
+          (<Link
+            href={nextChapter.path}
+            className={`border border-transparent flex w-1/2 justify-center md:justify-between rounded m-1 p-3 bg-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-gray-600 dark:hover:text-gray-100 ${
+              !prevChapter && 'w-full md:max-w-sm'
+            }`}
+            title={_('Next chapter')}>
+
+            <div className='mr-2 truncate'>{nextChapter.title}</div>
+            <div className='w-4'>
+              <ArrowRight />
+            </div>
+
+          </Link>)
         )}
       </div>
     </div>
-  )
+  );
 }

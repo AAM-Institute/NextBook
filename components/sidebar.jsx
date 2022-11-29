@@ -32,25 +32,25 @@ function SideBar() {
       <div className='w-full'>
         <div className='flex flex-col py-2 md:py-4'>
           {branding?.sidebarTitle && (
-            <Link href='/'>
-              <a aria-label={branding.sidebarTitle} className="py-8">
-                <div className='flex flex-col items-center'>
-                  {process.env.NEXT_PUBLIC_USE_LOGO && (
-                    <img
-                      src={`/${process.env.NEXT_PUBLIC_USE_LOGO}`}
-                      alt={branding.sidebarTitle}
-                      className='w-24 hidden md:inline-block'
-                    />
-                  )}
-                  <span
-                    className='hidden px-4 text-center md:inline-block font-semibold'
-                    title={branding.sidebarTitle}
-                  >
-                    {branding.sidebarTitle}
-                  </span>
-                </div>
-              </a>
-            </Link>
+            (<Link href='/' aria-label={branding.sidebarTitle} className="py-8">
+
+              <div className='flex flex-col items-center'>
+                {process.env.NEXT_PUBLIC_USE_LOGO && (
+                  <img
+                    src={`/${process.env.NEXT_PUBLIC_USE_LOGO}`}
+                    alt={branding.sidebarTitle}
+                    className='w-24 hidden md:inline-block'
+                  />
+                )}
+                <span
+                  className='hidden px-4 text-center md:inline-block font-semibold'
+                  title={branding.sidebarTitle}
+                >
+                  {branding.sidebarTitle}
+                </span>
+              </div>
+
+            </Link>)
           )}
 
           <div className='leading-loose tracking-wide'>
@@ -61,7 +61,7 @@ function SideBar() {
         </div>
       </div>
     </aside>
-  )
+  );
 }
 
 export default SideBar

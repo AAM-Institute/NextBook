@@ -36,12 +36,12 @@ A terminal (or command-prompt) is a program for text input and output. It acts a
 
 Some helpful commands:
 
-| Commands (with \<arguments\>) | Description |
-| --- | --- |
-| `mkdir <directory>` | **M**a**k**e **Dir**ectory. Create a new folder/directory on your system |
-| `touch <file>` | Creates an empty file |
+###### _Replace text and parenthesis `(`/`)` with your own values_
 
-###### _Replace text and carets `<`/`>` with your own values_
+| Commands (with arguments) | Description |
+| --- | --- |
+| `mkdir (directory>` | **M**a**k**e **Dir**ectory. Create a new folder/directory on your system |
+| `touch <file>` | Creates an empty file |
 
 ## 1.3 Version Control - Git (AKA a time machine for your files)
 
@@ -56,7 +56,9 @@ Reference [this link here](https://git-scm.com/downloads) while you watch [this 
 Let's get you setup with Git! Follow [this course here](https://www.theodinproject.com/lessons/foundations-git-basics) from The Odin Project to get your account set up.\
 **At this point you should be able to open a terminal and check your git version by running the following command: \`git -v\`**
 
-## 1.4 Interactive Development Environment (IDE): Visual Studio Code
+## 1.4 Interactive Development Environment (IDE)
+
+An IDE is a text-editor with many advanced centered around the coding and development processes. They do things like code coloring, linting, testing, and generally make the development experience much, much faster.
 
 Now let's get you VSCode. Watch [this video here](https://code.visualstudio.com/docs/introvideos/basics) and follow along. You can [grab VSCode here](https://vscode.dev/).
 
@@ -73,8 +75,8 @@ Let's go over the tools we've just installed, and get acquainted with Git. [Watc
 Use the command-line, Git, and VSCode to update a repository.
 
 - Create a personal Github account
-- Fork [our example project](https://github.com/AAM-Institute/project-001) into your personal account.
-- Update the project by adding your name or nickname to the list under "I Was Here"
+- Fork [our example project](https://github.com/AAM-Institute/project-001) into your personal account (click `Fork`, use the default options).
+- Update the project by adding your name or nickname to the list under "I Was Here".
 - Commit to save your changes, then push to your new fork.
 - Create a Pull Request back to the original repository. Once it is accepted and merged, your name will be shown on the AAM project page.
 

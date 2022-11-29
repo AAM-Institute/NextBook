@@ -75,6 +75,8 @@ Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Aliquam etiam
 Molestie a iaculis at erat pellentesque adipiscing commodo.
 ```
 
+#### Resources for Web Developers
+
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web) and [W3Schools](https://www.w3schools.com/) are _schools and resources for web developers_, if web technologies had a manual, these would be them
 - [Can I Use.](https://caniuse.com) Not all HTML/CSS/JS features are created equal. Certain features (Ex: CSS content-queries) may not be available in certain browsers or devices and therefore will only be seen by a fraction of users to your website. You can see browser support for all features using
 - [StackOverflow](https://stackoverflow.com) is the #1 place to ask programming questions and find answers for common programming knowledge. Remember to do proper research beforehand and include any additional information with your question. Ask your question in the appropriate category:

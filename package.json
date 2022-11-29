@@ -1,9 +1,10 @@
 {
-  "name": "next-book",
+  "name": "dev101",
+  "url": "https://development-101.vercel.app",
   "version": "2.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/amiroff/NextBook.git"
+    "url": "git://github.com/aam-institute/NextBook.git"
   },
   "scripts": {
     "dev": "next",
@@ -18,10 +19,10 @@
   "dependencies": {
     "@splitbee/web": "^0.3.0",
     "classnames": "^2.3.2",
-    "github-slugger": "^1.4.0",
+    "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "markdown-toc": "^1.2.0",
-    "next": "^12.3.1",
+    "next": "^13.0.5",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^4.0.3",
     "next-remote-watch": "2.0.0",
@@ -48,8 +49,8 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
-    "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.1.8"
