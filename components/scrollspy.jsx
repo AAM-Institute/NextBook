@@ -21,6 +21,27 @@ export default class Scrollspy extends React.Component {
     }
   }
 
+  updateHash = (hash) => {
+    if (hash !== this.state.current) {
+      router
+      .replace( // or push or whatever you want
+        {
+          hash,
+        },
+        null,
+        {
+          shallow: true,
+        }
+      )
+      .catch((e) => {
+        // TODO: workaround for https://github.com/vercel/next.js/issues/37362
+        if (!e.cancelled) {
+          throw e
+        }
+      })
+    }
+  }
+
   spy() {
     // I don't understand why this was implemented this way, but I optimized it
     if(this.elements) {
@@ -114,7 +135,7 @@ export default class Scrollspy extends React.Component {
             ),
             onClick: () => {
               // use next router to update url hash
-              router.push({ hash: item.id }, null, { shallow: true });
+              this.updateHash(item.id)
 
               // scroll to the element
               this.scrollTo(item.element)
