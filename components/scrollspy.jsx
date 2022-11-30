@@ -52,7 +52,7 @@ export default class Scrollspy extends React.Component {
 
         // router.push({ hash: itemInView.id }, null, { shallow: true });
 
-        this.setState({ items: update, current: itemInView.id  })        
+        this.setState({ items: update, current: itemInView.id  })
 
       }
     }

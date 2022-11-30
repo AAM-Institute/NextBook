@@ -35,7 +35,7 @@ function NavBar() {
               <span
                 className='hidden text-center md:inline-block font-semibold mr-4'
                 title={branding.title}
-              > 
+              >
                 {branding.title}
               </span>
             )}
