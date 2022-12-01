@@ -35,20 +35,14 @@ function InPageToc({ tocRaw }) {
   // Update current "copy link" button when the user scrolls
   const [url, setUrl] = useState('')
 
+  const onUpdateHash = (hash) => {
+    setUrl(`${window.location.origin}${window.location.pathname}#${hash}`)
+  }
+
+  // on mount, set the initial hash
   useEffect(()=>{
     setUrl(router.asPath)
-
-    const onHashChangeComplete = (url) => {
-        setUrl(url)
-    };
-
-    router.events.on("hashChangeComplete", onHashChangeComplete);
-
-    return () => {
-        router.events.off("hashChangeComplete", onHashChangeComplete);
-    };
   }, []);
-
 
   if (tocIds.length) {
     return (
@@ -71,6 +65,7 @@ function InPageToc({ tocRaw }) {
           itemClassName="text-gray-500 truncate py-1 hover:text-gray-700 dark:hover:text-gray-300"
           activeItemClassName='active text-gray-700 dark:text-gray-200 border-l-2 border-gray-900 dark:border-gray-200'
           includeParentClasses={false}
+          onUpdateHash={onUpdateHash}
         />
         
       </div>

@@ -4,7 +4,6 @@
  * and stripped of TS interfaces.
  * 
  * Lacy - November 2022: Added nextJS router support
- * TODO: update hashchange on scroll
  */
 
 import React from 'react'
@@ -13,7 +12,6 @@ import router from 'next/router'
 import debounce from 'utils/debounce'
 
 const DEBOUNCE_DELAY = 500
-
 export default class Scrollspy extends React.Component {
   constructor(props) {
     super(props)
@@ -25,22 +23,13 @@ export default class Scrollspy extends React.Component {
   }
 
   updateHash = (hash) => {
-    router
-      .replace( // or push or whatever you want
-        {
-          hash,
-        },
-        null,
-        {
-          shallow: true,
-        }
-      )
-      .catch((e) => {
-        // TODO: workaround for https://github.com/vercel/next.js/issues/37362
-        if (!e.cancelled) {
-          throw e
-        }
-      })
+    // enforce hash # prefix
+    if ((''+hash).charAt(0) !== '#') hash = '#' + hash;
+    
+    // router.replace causes a scroll
+    history.replaceState({}, '', hash);
+
+    this.props.onUpdateHash(hash)
   }
 
   dUpdateHash = debounce(this.updateHash, DEBOUNCE_DELAY)
@@ -75,9 +64,10 @@ export default class Scrollspy extends React.Component {
         })
 
         this.setState({ items: update, current: itemInView.id  })
-        
-        // Update page hash
+
+        // update page hash
         this.dUpdateHash(itemInView.id)
+
       }
     }
   }
@@ -88,7 +78,7 @@ export default class Scrollspy extends React.Component {
     window.addEventListener('scroll', () => this.spy(), false);
     window.addEventListener('resize', () => this.spy(), false);
     // fire on router change
-    router.events.on('routeChangeComplete', () => this.spy())
+    // router.events.on('routeChangeComplete', () => this.spy())
 
     // run on mount
     this.spy()
@@ -102,7 +92,7 @@ export default class Scrollspy extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', () => this.spy(), false);
     window.removeEventListener('resize', () => this.spy(), false);
-    router.events.off('routeChangeComplete')
+    // router.events.off('routeChangeComplete', () => this.spy())
 
   }
 
@@ -145,8 +135,6 @@ export default class Scrollspy extends React.Component {
             },
             slug: item.id,
             children: item?.element?.innerText,
-            // Truncate the text to n characters
-            // children: item.element.innerText.replace(/(.{20})..+/, "$1…")
           })
         : null
     })
