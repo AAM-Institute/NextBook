@@ -10,6 +10,9 @@
 import React from 'react'
 import classnames from 'classnames'
 import router from 'next/router'
+import debounce from 'utils/debounce'
+
+const DEBOUNCE_DELAY = 500
 
 export default class Scrollspy extends React.Component {
   constructor(props) {
@@ -22,8 +25,7 @@ export default class Scrollspy extends React.Component {
   }
 
   updateHash = (hash) => {
-    if (hash !== this.state.current) {
-      router
+    router
       .replace( // or push or whatever you want
         {
           hash,
@@ -39,8 +41,9 @@ export default class Scrollspy extends React.Component {
           throw e
         }
       })
-    }
   }
+
+  dUpdateHash = debounce(this.updateHash, DEBOUNCE_DELAY)
 
   spy() {
     // I don't understand why this was implemented this way, but I optimized it
@@ -71,10 +74,10 @@ export default class Scrollspy extends React.Component {
           return { ...item, inView: item === itemInView }
         })
 
-        // router.push({ hash: itemInView.id }, null, { shallow: true });
-
         this.setState({ items: update, current: itemInView.id  })
-
+        
+        // Update page hash
+        this.dUpdateHash(itemInView.id)
       }
     }
   }
@@ -135,7 +138,7 @@ export default class Scrollspy extends React.Component {
             ),
             onClick: () => {
               // use next router to update url hash
-              this.updateHash(item.id)
+              this.dUpdateHash(item.id)
 
               // scroll to the element
               this.scrollTo(item.element)
