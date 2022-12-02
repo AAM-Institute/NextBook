@@ -31,8 +31,8 @@ export default function DocumentLayout({ children, frontMatter }) {
         <div
           className='content px-4 md:px-14 xl:px-20 grow shrink'
         >
-          {/* {title && <h1>{title}</h1>} */}
-          {/* {description && <p className='my-1'>{description}</p>} */}
+          {title && <h1>{title}</h1>}
+          {description && <p className='my-1'>{description}</p>}
           
           {tags && (
             <div className='my-2 text-sm 2xl:text-base'>
@@ -64,7 +64,7 @@ export default function DocumentLayout({ children, frontMatter }) {
           <PageNav />
         </div>
         {showToc && (
-          <div className='toc-container hidden lg:block grow shrink-0 basis-80'>
+          <div className='toc-container hidden lg:block grow shrink-0 basis-64'>
             <div className='toc sticky top-20'>
               <InPageToc tocRaw={toc} />
             </div>
