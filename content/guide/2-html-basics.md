@@ -62,7 +62,7 @@ We have to abide by software licenses and copyrights when using assets online, b
 
 Read [this short guide](https://awik.io/generate-random-images-unsplash-without-using-api/) and [follow along in this video](https://www.youtube.com/watch?v=e8p1zSNmK7Q) to see how we can generate mock images of specific sizes to act as a placeholder while your site is being built.
 
-You can use the URL format [`https://source.unsplash.com/featured/`](https://source.unsplash.com/featured/300x201)`(<WIDTH>x<HEIGHT>)` to get a random image. (Example: [`https://source.unsplash.com/featured/480x320`](https://source.unsplash.com/featured/480x320)``
+You can use the URL format [`https://source.unsplash.com/featured/`](https://source.unsplash.com/featured/300x201)`(<WIDTH>x<HEIGHT>)` to get a random image. (Example: [`https://source.unsplash.com/featured/480x320`](https://source.unsplash.com/featured/480x320)
 
 #### Filler Text or Dummy Content (AKA [Lorem Ipsum](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjspICmgK_7AhUuSzABHb4SAI0QmhN6BAgaEAI&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FLorem_ipsum&usg=AOvVaw0_rKsmfs2-75sm_MYbRlS3))
 
