@@ -76,7 +76,7 @@ h6 {
 }
 
 pre {
-  @apply rounded-sm overflow-auto mx-auto max-w-[88vw] md:max-w-[46vw] lg:max-w-[30vw] xl:max-w-[38vw] 2xl:max-w-[48vw];
+  @apply rounded-sm overflow-auto mx-auto max-w-[88vw] md:max-w-[46vw] lg:max-w-[30vw] xl:max-w-[38vw] 2xl:max-w-[32vw];
 }
 
 /* Diffs without line numbering */
