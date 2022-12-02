@@ -34,20 +34,20 @@ a.current {
   color: var(--color-link);
 }
 
-.md-content a,
-.toc li.active {
+html.light .md-content a,
+html.light .toc li.active {
   border-color: var(--color-link);
   color: var(--color-link);
   text-decoration: none;
 }
 
-.md-content a:hover,
-.md-content a:focus {
+html.light .md-content a:hover,
+html.light .md-content a:focus {
   color: var(--color-link-hover);
   text-decoration: underline;
 }
 
-.md-content a:visited {
+html.light .md-content a:visited {
   color: var(--color-link-visited);
 }
 
