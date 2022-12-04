@@ -1,9 +1,10 @@
 ---
 part: dev101
-title: Javascript Basics
+title: 4.0 Javascript Basics
+updated: '2022-12-04'
+tags: [coding school, javascript, react, nextjs]
+description: 'In this section, we will learn about JavaScript and how it can be used to build web applications.'
 ---
-
-# 4.0 Javascript Basics
 
 Now let's jump into Javascript, the programming language of The Web. These next videos give a great intro to adding Javascript to a page and doing basic scripts:
 

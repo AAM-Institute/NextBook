@@ -1,9 +1,10 @@
 ---
 part: dev101
-title: HTML Basics
+title: 2.0 HTML Basics
+updated: '2022-12-04'
+tags: [coding school, programming, web development, html, css, javascript]
+description: 'In this section, we will learn about HTML and CSS, the building blocks of the web.'
 ---
-
-# 2.0 HTML Basics
 
 **Welcome to Web Dev (continued):**
 

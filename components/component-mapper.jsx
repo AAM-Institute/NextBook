@@ -1,4 +1,5 @@
 import Counter from './example-counter'
+import GithubTestRunner from './github-test-runner'
 import {
   Accordion,
   Blockquote,
@@ -27,6 +28,7 @@ import {
 
 export const componentMap = {
   Counter,
+  GithubTestRunner,
   Accordion,
   Tab,
   Tabs,

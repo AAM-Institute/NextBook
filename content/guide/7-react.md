@@ -1,9 +1,10 @@
 ---
 part: dev101
-title: Javascript Frameworks
+title: 7.0 Javascript Frameworks
+updated: '2022-12-04'
+tags: [coding school, javascript, react, nextjs]
+description: 'In this section, we will learn about JavaScript frameworks and how they can be used to build web applications.'
 ---
-
-# 7.0 Javascript Frameworks
 
 ### 7.1 ReactJS
 
@@ -24,3 +25,5 @@ NextJS is a full-stack framework enabling React-based web applications to be bui
 You did it! The last survey. **Feel free to add overall feedback to this one!**
 
 <mark>**Please complete this**</mark> [**short survey here**](https://docs.google.com/forms/d/e/1FAIpQLScrDUY6h3O8V6F_1fQ8fRMyvjyfYBhfIzvv546HvipXTjEcQQ/viewform) <mark>**for this module.**</mark>
+
+<GithubTestRunner />

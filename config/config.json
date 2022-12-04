@@ -90,6 +90,10 @@
         {
           "title": "Full-Stack Javascript",
           "path": "/guide/7-react"
+        },
+        {
+          "title": "Conclusion",
+          "path": "/guide/8-conclusion"
         }
       ]
     },

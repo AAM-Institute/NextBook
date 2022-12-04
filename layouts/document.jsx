@@ -32,23 +32,9 @@ export default function DocumentLayout({ children, frontMatter }) {
           className='content px-4 md:px-14 xl:px-20 grow shrink'
         >
           {title && <h1>{title}</h1>}
-          {description && <p className='my-1'>{description}</p>}
+          {description && <p className='my-1 text-xs'>{description}</p>}
           
-          {tags && (
-            <div className='my-2 text-sm 2xl:text-base'>
-              <span>
-                <Text tid='Tags' />:
-              </span>
-              {tags.map((tag) => (
-                <span
-                  className='bg-gray-300 dark:bg-gray-700 rounded m-1 p-1 text-xs'
-                  key={tag}
-                >
-                  {`#${tag}`}
-                </span>
-              ))}
-            </div>
-          )}
+
 
           <div className='md-content'>{children}</div>
           <hr className='my-3 mx-1 print:hidden border-gray-300 dark:border-gray-600' />
@@ -59,6 +45,21 @@ export default function DocumentLayout({ children, frontMatter }) {
                 locale || 'en',
                 dateOptions
               )}
+            </div>
+          )}
+          {tags && (
+            <div className='my-2 text-sm 2xl:text-base'>
+              {/* <span>
+                <Text tid='Tags' />:
+              </span> */}
+              {tags.map((tag) => (
+                <span
+                  className='bg-gray-300 dark:bg-gray-700 rounded m-1 p-1 text-xs'
+                  key={tag}
+                >
+                  {`#${tag}`}
+                </span>
+              ))}
             </div>
           )}
           <PageNav />

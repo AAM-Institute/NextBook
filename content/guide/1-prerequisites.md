@@ -1,9 +1,10 @@
 ---
 part: dev101
-title: Initial Setup
+title: 1.0 Initial Setup
+updated: '2022-12-04'
+tags: [coding school, git, github, terminal, vscode]
+description: 'In this section, we will learn how to set up our development environment and tools.'
 ---
-
-# 1.0 Initial Setup
 
 ### 1.1 Operating System
 

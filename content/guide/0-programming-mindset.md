@@ -1,9 +1,11 @@
 ---
 part: dev101
-title: Programming Mindset
+title: 0.0 Programming Mindset
+updated: '2022-12-04'
+tags:
+  [coding school, programming, web development, html, css, javascript, react]
+description: 'In this section, we will learn about the programming mindset and how it can be used to build web applications.'
 ---
-
-# 0.0 Programming Mindset
 
 ### 0.1 Introduction to Web Development
 

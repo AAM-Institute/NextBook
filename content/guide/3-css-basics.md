@@ -1,9 +1,10 @@
 ---
 part: dev101
-title: CSS Basics
+title: 3.0 CSS Basics
+updated: '2022-12-04'
+tags: [coding school, html, css]
+description: 'In this section, we will learn about CSS and how it can be used to style web pages.'
 ---
-
-# 3.0 CSS Basics
 
 [Watch this video here](https://www.youtube.com/watch?v=dC34rfY8Eyk) as an introduction to CSS. (5 min)
 

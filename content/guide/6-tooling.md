@@ -1,9 +1,20 @@
 ---
 part: dev101
-title: Further Development & Tooling
+title: 6.0 Further Development & Tooling
+updated: '2022-12-04'
+tags:
+  [
+    coding school,
+    programming,
+    web development,
+    html,
+    css,
+    javascript,
+    devtools,
+    tooling
+  ]
+description: 'In this section, we will learn about further development and tooling.'
 ---
-
-# 6.0 Further Development & Tooling
 
 ## 6.1 UNIX command-line
 

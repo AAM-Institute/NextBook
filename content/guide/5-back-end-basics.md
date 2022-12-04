@@ -1,9 +1,28 @@
 ---
 part: dev101
-title: Back End
+title: 5.0 Back End Basics
+updated: '2022-12-04'
+tags:
+  [
+    back end,
+    coding school,
+    programming,
+    web development,
+    html,
+    css,
+    javascript,
+    react,
+    nextjs,
+    nodejs,
+    express,
+    mongodb,
+    sql,
+    mysql,
+    postgresql,
+    database
+  ]
+description: 'In this section, we will learn about back end development and how it can be used to build web applications.'
 ---
-
-# 5.0 Back End Basics
 
 The back end or server is what allows websites to serve different content to different users. A server uses a programming language to generate pages on-the-fly and "serve" them to the client (which is you!). A server or cloud is just another computer or array of computers setup to be publicly accessible by the internet.
 
