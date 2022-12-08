@@ -12,7 +12,7 @@ function NavBar() {
   return (
     <div className='flex pt-1 text-xs lg:text-sm max-h-full max-w-screen-2xl mx-auto'>
       <SideBarToggler />
-      <nav className='text-left text-xs lg:text-sm pl-4 flex-auto space-x-1 text-gray-900 dark:text-[#FFFFFF]'>
+      <nav className='text-left text-xs lg:text-sm pl-4 flex flex-auto space-x-1 text-gray-900 dark:text-[#FFFFFF]'>
         <div className='inline-flex max-h-full shrink max-w-xs'>
           {branding && (
             (<Link href={branding.href || '/'} aria-label={branding.title} className="">
@@ -44,7 +44,7 @@ function NavBar() {
             </Link>)
           )}
         </div>
-        <div className='inline-flex max-h-full shrink mx-0 pl-0 xl:pl-5'>
+        <div className='inline-flex max-h-full shrink mx-0 pl-0 xl:pl-5 items-center'>
           {navbarItems.map((item) => {
             // Highlight current page
             return (
@@ -65,7 +65,9 @@ function NavBar() {
             )}
         </div>
       </nav>
-      <LoginBtn />
+      <div className='inline-flex items-center'>
+        <LoginBtn />
+      </div>
       <ColorModeToggler />
     </div>
   );

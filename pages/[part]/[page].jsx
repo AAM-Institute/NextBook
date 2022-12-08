@@ -21,7 +21,7 @@ import { contentMapping, CONTENT_PATH } from 'utils/mdxUtils'
 export default function Page({ source, frontMatter, params }) {
   console.log(params)
   const { status } = useSession({
-    required: !( !params.page && params?.part === 'intro')
+    required: !( !params?.page && params?.part === 'intro')
   })
 
   if (status === "loading") {
