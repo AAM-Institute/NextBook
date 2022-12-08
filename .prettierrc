@@ -9,6 +9,6 @@
   "useTabs": false,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "proseWrap": "never",
+  "proseWrap": "preserve",
   "trailingComma": "none"
 }
