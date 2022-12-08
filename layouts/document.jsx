@@ -32,7 +32,7 @@ export default function DocumentLayout({ children, frontMatter }) {
           className='content px-4 md:px-14 xl:px-20 grow shrink'
         >
           {title && <h1>{title}</h1>}
-          {description && <p className='my-1 text-xs'>{description}</p>}
+          {description && <p className='my-1 mb-8 text-sm md:text-xl tracking-wide text-gray-400'>{description}</p>}
           
 
 
