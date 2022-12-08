@@ -3,6 +3,7 @@ import SideBarToggler from './sidebar-toggler'
 import config from 'config/config.json'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import LoginBtn from './login-btn'
 
 function NavBar() {
   const { branding, navbarItems } = config
@@ -64,6 +65,7 @@ function NavBar() {
             )}
         </div>
       </nav>
+      <LoginBtn />
       <ColorModeToggler />
     </div>
   );

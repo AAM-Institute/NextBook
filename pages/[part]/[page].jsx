@@ -4,6 +4,7 @@ import GithubSlugger from 'github-slugger'
 import matter from 'gray-matter'
 import DocumentLayout from 'layouts/document'
 import toc from 'markdown-toc'
+import { useSession } from "next-auth/react"
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
@@ -16,7 +17,17 @@ import slug from 'remark-slug'
 import { rehypeMetaAsProps } from 'utils/mdxUtils'
 import { contentMapping, CONTENT_PATH } from 'utils/mdxUtils'
 
-export default function Page({ source, frontMatter }) {
+
+export default function Page({ source, frontMatter, params }) {
+  console.log(params)
+  const { status } = useSession({
+    required: !( !params.page && params?.part === 'intro')
+  })
+
+  if (status === "loading") {
+    return "Loading or not authenticated..."
+  }
+
   return (
     <DocumentLayout frontMatter={frontMatter}>
       <MDXRemote {...source} components={componentMap} />
@@ -52,7 +63,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       source: mdxSource,
-      frontMatter: data
+      frontMatter: data,
+      params,
     }
   }
 }
