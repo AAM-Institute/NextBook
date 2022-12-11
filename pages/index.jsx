@@ -22,7 +22,7 @@ export default function HomePage() {
         <p>
           Let&apos;s get started, redirecting you to the{' '}
           <Link href={docsIndex} className='underline'>
-            documentation
+            documentation&hellip;
           </Link>
         </p>
       </div>

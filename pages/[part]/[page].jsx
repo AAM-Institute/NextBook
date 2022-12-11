@@ -4,6 +4,7 @@ import GithubSlugger from 'github-slugger'
 import matter from 'gray-matter'
 import DocumentLayout from 'layouts/document'
 import toc from 'markdown-toc'
+import { useSession } from "next-auth/react"
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
@@ -29,7 +30,18 @@ const query = `query BlogPostQuery($relativePath: String!) {
   }
 }`
 
-export default function Page({ source, frontMatter, ...props }) {
+export default function Page({ source, frontMatter, params, ...props }) {
+  // Auth
+  const { status } = useSession({
+    // Specify pages that require authorization
+    required: !( !params?.page && params?.part === 'intro')
+  })
+
+  if (status === "loading") {
+    // todo: something better- + loading anim
+    return "Loading or not authenticated..."
+  }
+
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
@@ -76,6 +88,7 @@ export const getStaticProps = async ({ params }) => {
   const relativePath = path.join(params.part, params.page || 'index') + ext
   return {
     props: {
+      params,
       source: mdxSource,
       frontMatter: data,
       data: mdxSource,

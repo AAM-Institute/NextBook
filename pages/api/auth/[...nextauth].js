@@ -12,8 +12,9 @@ export const authOptions = {
     ],
     callbacks: {
         async signIn({ user, account, profile, email, credentials }) {
+            console.log(user, account, profile, email, credentials);
+            
             const isAllowedToSignIn = true;
-            // console.log(user, account, profile, email, credentials);
 
             if (isAllowedToSignIn) {
                 return true;
@@ -32,7 +33,7 @@ export const authOptions = {
         },
         async session({ session, token, user }) {
             // Send properties to the client, like an access_token from a provider.
-            // console.log('user', user)
+            console.log('user', user)
             return {
             token,
             // userId: user.id,

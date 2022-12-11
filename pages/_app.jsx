@@ -1,4 +1,5 @@
 import splitbee from '@splitbee/web'
+import { SessionProvider } from "next-auth/react"
 import { OptionalHistoryContextProvider } from 'components/store/history-context'
 import { SideBarContextProvider } from 'components/store/sidebar-context'
 import { ThemeContextProvider } from 'components/store/theme-context'
@@ -15,14 +16,16 @@ if (
   })
 }
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <ThemeContextProvider>
-      <OptionalHistoryContextProvider>
-        <SideBarContextProvider>
-          <Component {...pageProps} />
-        </SideBarContextProvider>
-      </OptionalHistoryContextProvider>
-    </ThemeContextProvider>
+    <SessionProvider session={session}>
+      <ThemeContextProvider>
+        <OptionalHistoryContextProvider>
+          <SideBarContextProvider>
+            <Component {...pageProps} />
+          </SideBarContextProvider>
+        </OptionalHistoryContextProvider>
+      </ThemeContextProvider>
+    </SessionProvider>
   )
 }
