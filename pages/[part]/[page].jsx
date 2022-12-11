@@ -21,6 +21,10 @@ import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { useCallback, useEffect, useState } from 'react'
 import equal from 'fast-deep-equal'
 import {toString} from 'mdast-util-to-string'
+// // import embeds from 'mdx-embed'
+// import { CodePen, Gist } from 'mdx-embed';
+import dynamic from 'next/dynamic';
+const embeds = dynamic(() => import('mdx-embed'), { ssr: false });
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -35,15 +39,18 @@ export default function Page({ source, frontMatter, ...props }) {
     variables: props.variables,
     data: props.data,
   })
-  
+
+  console.log(data?.article?.body)
+  console.log(componentMap)
   return (
     <DocumentLayout frontMatter={frontMatter}>
-        <MDXRemote {...source} components={componentMap} />
+        <MDXRemote {...source} components={{...componentMap}} />
     </DocumentLayout>
   )
 }
 
 export const getStaticProps = async ({ params }) => {
+  console.log(embeds)
   // get file and split content into data and frontmatter
   let source = ''
   let ext = ''
