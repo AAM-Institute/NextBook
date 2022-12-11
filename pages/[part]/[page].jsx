@@ -1,8 +1,6 @@
-import { componentMap } from 'components/component-mapper'
 import fs from 'fs'
 import GithubSlugger from 'github-slugger'
 import matter from 'gray-matter'
-import DocumentLayout from 'layouts/document'
 import toc from 'markdown-toc'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -13,18 +11,14 @@ import externalLinks from 'remark-external-links'
 import remarkGfm from 'remark-gfm'
 import hints from 'remark-hint'
 import slug from 'remark-slug'
+import { useTina } from 'tinacms/dist/react'
+
+import { componentMap } from 'components/component-mapper'
+import DocumentLayout from 'layouts/document'
 import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
 import { CONTENT_PATH } from 'utils/mdxUtils'
-import { useTina } from 'tinacms/dist/react'
+
 import { staticRequest, gql, getStaticPropsForTina } from 'tinacms'
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
-import { useCallback, useEffect, useState } from 'react'
-import equal from 'fast-deep-equal'
-import {toString} from 'mdast-util-to-string'
-// // import embeds from 'mdx-embed'
-// import { CodePen, Gist } from 'mdx-embed';
-import dynamic from 'next/dynamic';
-const embeds = dynamic(() => import('mdx-embed'), { ssr: false });
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -40,17 +34,36 @@ export default function Page({ source, frontMatter, ...props }) {
     data: props.data,
   })
 
-  console.log(data?.article?.body)
-  console.log(componentMap)
+  // const [content, setContent] = useState(source)
+
+  // useEffect(() => {
+  //   const fn = async () => {
+  //     const mark = await unified()
+  //       .use(rehypeParse)
+  //       .use(rehypeRemark)
+  //       .use(oembed)
+  //       .use(remarkStringify, {
+  //         bullet: '*',
+  //         fence: '~',
+  //         fences: true,
+  //         incrementListMarker: false
+  //       })
+  //       .process(content)
+  //     console.log(mark)
+  //     setContent(mark)
+  //   }
+  //   fn()
+  // }, [content])
+
   return (
     <DocumentLayout frontMatter={frontMatter}>
-        <MDXRemote {...source} components={{...componentMap}} />
+        <MDXRemote {...source} components={componentMap} />
     </DocumentLayout>
   )
 }
 
 export const getStaticProps = async ({ params }) => {
-  console.log(embeds)
+
   // get file and split content into data and frontmatter
   let source = ''
   let ext = ''
@@ -75,7 +88,7 @@ export const getStaticProps = async ({ params }) => {
     components: componentMap,
     mdxOptions: {
       rehypePlugins: [rehypeMetaAsProps],
-      remarkPlugins: [emoji, externalLinks, slug, hints, breaks, remarkGfm]
+      remarkPlugins: [ emoji, externalLinks, slug, hints, remarkGfm, /*breaks, oembed*/ ]
     },
     scope: data,
   })
@@ -84,8 +97,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       source: mdxSource,
-      frontMatter: data,
       data: mdxSource,
+      frontMatter: data,
       query,
       variables: {
         relativePath
