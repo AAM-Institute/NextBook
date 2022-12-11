@@ -30,35 +30,12 @@ const query = `query BlogPostQuery($relativePath: String!) {
 }`
 
 export default function Page({ source, frontMatter, ...props }) {
-  const [mdxSource, setMdxSource] = useState(source)
-  
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
     data: props.data,
   })
-
-  useEffect(() => {
-    const renderTina = async () => {
-      const newSource = await serialize(toString(data?.article?.body), {
-        components: componentMap,
-        mdxOptions: {
-          rehypePlugins: [rehypeMetaAsProps],
-          remarkPlugins: [emoji, externalLinks, slug, hints, breaks, remarkGfm]
-        },
-        scope: frontMatter,
-      })
-
-      setMdxSource(newSource)
-
-    }
-    data?.article?.body && renderTina()
-
-    return () => {
-    };
-  }, [data?.article, frontMatter])
-  // <DocumentLayout frontMatter={{...frontMatter, ...(data?.article?.title ? {title: data?.article?.title} :{})}}>
-
+  
   return (
     <DocumentLayout frontMatter={frontMatter}>
         <MDXRemote {...source} components={componentMap} />
