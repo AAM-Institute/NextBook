@@ -7,21 +7,24 @@
     "url": "git://github.com/aam-institute/NextBook.git"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "tinacms dev -c \"tinacms dev -c \"tinacms dev -c \"next\"\"\"",
     "dev:debug": "NODE_OPTIONS='--inspect' next dev",
     "dev:watch": "next-remote-watch ./content",
     "postbuild": "next-sitemap --config next-sitemap-config.js",
-    "build": "next build",
-    "start": "next start",
+    "build": "tinacms build && tinacms build && tinacms build && next build",
+    "start": "tinacms build && tinacms build && tinacms build && next start",
     "export": "next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
     "@splitbee/web": "^0.3.0",
+    "@tinacms/cli": "^1.0.3",
     "classnames": "^2.3.2",
+    "fast-deep-equal": "^3.1.3",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "markdown-toc": "^1.2.0",
+    "mdast-util-to-string": "^3.1.0",
     "next": "^13.0.5",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^4.0.3",
@@ -44,7 +47,8 @@
     "remark-hint": "^1.0.10",
     "remark-mark-plus": "^1.0.21",
     "remark-slug": "^7.0.1",
-    "remark-sub-super": "^1.0.20"
+    "remark-sub-super": "^1.0.20",
+    "tinacms": "^1.1.0"
   },
   "license": "MIT",
   "devDependencies": {

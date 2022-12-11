@@ -12,6 +12,7 @@ export default function HomePage() {
 
   return (
     <div className='mx-auto max-w-md'>
+      
       <div className='text-center mt-32 text-3xl font-bold'>
         Welcome To Dev101!
       </div>

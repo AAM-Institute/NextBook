@@ -1,3 +1,9 @@
+/* 
+ * TODO:
+  - Replace icons and branding with unique
+  - rewrite scrollspy
+  - 
+ */
 import NavBar from 'components/navbar'
 import SideBar from 'components/sidebar'
 import config from 'config/config.json'

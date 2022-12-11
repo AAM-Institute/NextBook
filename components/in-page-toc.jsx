@@ -48,7 +48,7 @@ function InPageToc({ tocRaw }) {
     return (
       <div className='px-4'>
         <a
-          className='m-4 text-sm text-gray-400 hover:text-gray-500 dark:text-gray-400  dark:hover:text-gray-300 block'
+          className='my-4 text-xs xl:text-sm text-gray-400 hover:text-gray-500 dark:text-gray-400  dark:hover:text-gray-300 block'
           href={url}
         >
           <Link />
