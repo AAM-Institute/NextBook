@@ -20,8 +20,6 @@ import { useTina } from 'tinacms/dist/react'
 import { staticRequest, gql, getStaticPropsForTina } from 'tinacms'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { useCallback, useEffect, useState } from 'react'
-import equal from 'fast-deep-equal'
-import {toString} from 'mdast-util-to-string'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -32,9 +30,23 @@ const query = `query BlogPostQuery($relativePath: String!) {
 
 export default function Page({ source, frontMatter, params, ...props }) {
   // Auth
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  })
+
+  const publicRoutes = [
+    'intro',
+    'guide/0-programming-mindset',
+  ]
+
+  console.log()
+
   const { status } = useSession({
     // Specify pages that require authorization
-    required: !( !params?.page && params?.part === 'intro')
+    required: !publicRoutes.includes(`${params?.part}${params?.page ? `/${params.page}` : ''}`),
+    
   })
 
   if (status === "loading") {
@@ -42,11 +54,6 @@ export default function Page({ source, frontMatter, params, ...props }) {
     return "Loading or not authenticated..."
   }
 
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  })
   
   return (
     <DocumentLayout frontMatter={frontMatter}>
