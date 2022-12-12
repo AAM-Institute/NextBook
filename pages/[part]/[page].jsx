@@ -39,6 +39,9 @@ export default function Page({ source, frontMatter, params, ...props }) {
   const publicRoutes = [
     'intro',
     'guide/0-programming-mindset',
+    'guide/1-prerequisites',
+    'guide/2-css-basics',
+    'guide/3-css-basics',
   ]
 
   const { status } = useSession({

@@ -4,7 +4,6 @@ import config from 'config/config.json'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import LoginBtn from './login-btn'
-import { Button } from '@nextui-org/react';
 
 function NavBar() {
   const { branding, navbarItems } = config
@@ -67,7 +66,6 @@ function NavBar() {
         </div>
       </nav>
       <div className='inline-flex items-center'>
-        <Button>Click me</Button>
         <LoginBtn />
       </div>
       <ColorModeToggler />

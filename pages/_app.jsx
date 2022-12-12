@@ -21,15 +21,15 @@ if (
 export default function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
+      {/* <NextUIProvider> */}
         <ThemeContextProvider>
           <OptionalHistoryContextProvider>
             <SideBarContextProvider>
-      {/* <NextUIProvider> */}
               <Component {...pageProps} />
-      {/* </NextUIProvider> */}
             </SideBarContextProvider>
           </OptionalHistoryContextProvider>
         </ThemeContextProvider>
+      {/* </NextUIProvider> */}
     </SessionProvider>
   )
 }
