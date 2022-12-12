@@ -1,5 +1,6 @@
 import { Airtable } from "mdx-embed/dist/components/airtable";
 import { CodePen } from "mdx-embed/dist/components/codepen";
+import { CodeSandbox } from "mdx-embed/dist/components/codesandbox";
 import { Figma } from "mdx-embed/dist/components/figma";
 import { Gist } from "mdx-embed/dist/components/gist";
 import { Instagram } from "mdx-embed/dist/components/instagram";
@@ -20,17 +21,18 @@ export const componentMap = {
   Counter,
   GithubTestRunner,
   
-  // // mdx-embed
-  // Airtable,
-  // CodePen,
-  // Figma,
-  // Gist,
-  // Instagram,
-  // SoundCloud,
-  // Spotify,  
-  // Twitch,
-  // Twitter,
-  // Vimeo,
-  // Wistia,
-  // YouTube,
+  // mdx-embed
+  Airtable,
+  CodePen,
+  CodeSandbox,
+  Figma,
+  Gist,
+  Instagram,
+  SoundCloud,
+  Spotify,  
+  Twitch,
+  Twitter,
+  Vimeo,
+  Wistia,
+  YouTube,
 }
