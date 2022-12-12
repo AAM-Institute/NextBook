@@ -29,11 +29,11 @@ const query = `query BlogPostQuery($relativePath: String!) {
 }`
 
 export default function Page({ source, frontMatter, params, ...props }) {
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  })
+  // const { data } = useTina({
+  //   query: props.query,
+  //   variables: props.variables,
+  //   data: props.data,
+  // })
   
   // Auth
   const publicRoutes = [
@@ -52,7 +52,11 @@ export default function Page({ source, frontMatter, params, ...props }) {
 
   if (status === "loading") {
     // todo: something better- + loading anim
-    return "Loading or not authenticated..."
+    return (
+      <DocumentLayout frontMatter={frontMatter}>
+        Loading or not authenticated...
+      </DocumentLayout>
+    )
   }
 
   // const [content, setContent] = useState(source)
