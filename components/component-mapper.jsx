@@ -6,6 +6,7 @@ import { Gist } from "mdx-embed/dist/components/gist";
 import { Instagram } from "mdx-embed/dist/components/instagram";
 import { SoundCloud } from "mdx-embed/dist/components/soundcloud";
 import { Spotify } from "mdx-embed/dist/components/spotify";
+import { TikTok } from "mdx-embed/dist/components/tiktok";
 import { Twitch } from "mdx-embed/dist/components/twitch";
 // import { Twitter } from "mdx-embed/dist/components/twitter";
 import { Vimeo } from "mdx-embed/dist/components/vimeo";
@@ -75,7 +76,8 @@ export const componentMap = {
   Gist,
   Instagram,
   SoundCloud,
-  Spotify,  
+  Spotify,
+  TikTok,
   Twitch,
   Vimeo,
   Wistia,
