@@ -2,6 +2,7 @@
  * TODO:
   - Replace icons and branding with unique
   - rewrite scrollspy
+  - dark mode improvements
   - 
  */
 import NavBar from 'components/navbar'
