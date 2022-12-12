@@ -19,7 +19,7 @@ import { useTina } from 'tinacms/dist/react'
 import { componentMap } from 'components/component-mapper'
 import DocumentLayout from 'layouts/document'
 import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
-import { contentMapping, CONTENT_PATH } from 'utils/mdxUtils'
+import { CONTENT_PATH } from 'utils/mdxUtils'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -130,7 +130,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
+  // const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
   
   // // merge page mdxPaths with tina
   const articlesListData = await staticRequest({
