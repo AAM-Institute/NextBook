@@ -40,7 +40,7 @@ export default function Page({ source, frontMatter, params, ...props }) {
     'intro',
     'guide/0-programming-mindset',
     'guide/1-prerequisites',
-    'guide/2-css-basics',
+    'guide/2-html-basics',
     'guide/3-css-basics',
     'references',
     'references/glossary',
