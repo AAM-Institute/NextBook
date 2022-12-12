@@ -14,7 +14,7 @@ module.exports = {
             {
               key: 'Content-Security-Policy',
               value:
-                "default-src * 'self'; image-src 'https://unsplash.com'; script-src * 'self' 'https://vitals.vercel-insights.com';font-src 'self' 'https://fonts.googleapis.com'",
+                "default-src * ; image-src 'https://unsplash.com'; script-src * ;font-src 'self' 'https://fonts.googleapis.com'",
             },
             {
               key: 'X-Content-Type-Options',
