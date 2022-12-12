@@ -4,7 +4,6 @@ import { NextUIProvider } from '@nextui-org/react';
 import { OptionalHistoryContextProvider } from 'components/store/history-context'
 import { SideBarContextProvider } from 'components/store/sidebar-context'
 import { ThemeContextProvider } from 'components/store/theme-context'
-import ErrorBoundary from 'components/error-boundary'
 
 // imports tailwind styles
 import 'styles/print.css'
@@ -26,9 +25,9 @@ export default function MyApp({ Component, pageProps: { session, ...pageProps } 
         <ThemeContextProvider>
           <OptionalHistoryContextProvider>
             <SideBarContextProvider>
-              <ErrorBoundary>
+              {/* <ErrorBoundary> */}
                 <Component {...pageProps} />
-              </ErrorBoundary>
+              {/* </ErrorBoundary> */}
             </SideBarContextProvider>
           </OptionalHistoryContextProvider>
         </ThemeContextProvider>
