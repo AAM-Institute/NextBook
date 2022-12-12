@@ -1,9 +1,11 @@
 import splitbee from '@splitbee/web'
 import { SessionProvider } from "next-auth/react"
+import { NextUIProvider } from '@nextui-org/react';
 import { OptionalHistoryContextProvider } from 'components/store/history-context'
 import { SideBarContextProvider } from 'components/store/sidebar-context'
 import { ThemeContextProvider } from 'components/store/theme-context'
-import 'tailwindcss/tailwind.css'
+
+// imports tailwind styles
 import 'styles/print.css'
 import 'styles/app.css'
 
@@ -19,13 +21,15 @@ if (
 export default function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <ThemeContextProvider>
-        <OptionalHistoryContextProvider>
-          <SideBarContextProvider>
-            <Component {...pageProps} />
-          </SideBarContextProvider>
-        </OptionalHistoryContextProvider>
-      </ThemeContextProvider>
+        <ThemeContextProvider>
+          <OptionalHistoryContextProvider>
+            <SideBarContextProvider>
+      {/* <NextUIProvider> */}
+              <Component {...pageProps} />
+      {/* </NextUIProvider> */}
+            </SideBarContextProvider>
+          </OptionalHistoryContextProvider>
+        </ThemeContextProvider>
     </SessionProvider>
   )
 }

@@ -3,7 +3,6 @@ import GithubProvider from 'next-auth/providers/github';
 // import EmailProvider from "next-auth/providers/email"
 
 export const authOptions = {
-    secret: process.env.NEXTAUTH_SECRET || undefined,
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID,

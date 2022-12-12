@@ -13,8 +13,8 @@ import remarkGfm from 'remark-gfm'
 import hints from 'remark-hint'
 import slug from 'remark-slug'
 
-// import { staticRequest } from 'tinacms'
-// import { useTina } from 'tinacms/dist/react'
+import { staticRequest } from 'tinacms'
+import { useTina } from 'tinacms/dist/react'
 
 import { componentMap } from 'components/component-mapper'
 import DocumentLayout from 'layouts/document'
@@ -29,19 +29,17 @@ const query = `query BlogPostQuery($relativePath: String!) {
 }`
 
 export default function Page({ source, frontMatter, params, ...props }) {
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  })
+  
   // Auth
-  // const { data } = useTina({
-  //   query: props.query,
-  //   variables: props.variables,
-  //   data: props.data,
-  // })
-
   const publicRoutes = [
     'intro',
     'guide/0-programming-mindset',
   ]
-
-  console.log()
 
   const { status } = useSession({
     // Specify pages that require authorization
@@ -129,40 +127,40 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
+  // const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
   
   // // merge page mdxPaths with tina
-  // const articlesListData = await staticRequest({
-  //   query: `
-  //     query {
-  //       articleConnection {
-  //         edges {
-  //           node {
-  //             _sys {
-  //               filename
-  //               relativePath
-  //             }
-  //             title
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `,
-  //   variables: {},
-  // })
+  const articlesListData = await staticRequest({
+    query: `
+      query {
+        articleConnection {
+          edges {
+            node {
+              _sys {
+                filename
+                relativePath
+              }
+              title
+            }
+          }
+        }
+      }
+    `,
+    variables: {},
+  })
   
-  // const paths = articlesListData.articleConnection.edges.map(edge => {
-  //   return {
-  //     params: { 
-  //       part: path.dirname(edge.node._sys.relativePath),
-  //       page: edge.node._sys.filename,
-  //       slug: edge.node._sys.filename 
-  //     },
-  //   }
-  // })
+  const paths = articlesListData.articleConnection.edges.map(edge => {
+    return {
+      params: { 
+        part: path.dirname(edge.node._sys.relativePath),
+        page: edge.node._sys.filename,
+        slug: edge.node._sys.filename 
+      },
+    }
+  })
 
   return {
-    paths: mdxPaths,
+    paths,
     fallback: "blocking",
   }
 }
