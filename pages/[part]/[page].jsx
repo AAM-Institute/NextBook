@@ -163,7 +163,7 @@ export const getStaticPaths = async () => {
   // })
 
   return {
-    paths: mdxPath,
+    paths: mdxPaths,
     fallback: "blocking",
   }
 }
