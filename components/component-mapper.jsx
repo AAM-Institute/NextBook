@@ -1,3 +1,17 @@
+import { Airtable } from "mdx-embed/dist/components/airtable";
+import { CodePen } from "mdx-embed/dist/components/codepen";
+import { CodeSandbox } from "mdx-embed/dist/components/codesandbox";
+import { Figma } from "mdx-embed/dist/components/figma";
+import { Gist } from "mdx-embed/dist/components/gist";
+import { Instagram } from "mdx-embed/dist/components/instagram";
+import { SoundCloud } from "mdx-embed/dist/components/soundcloud";
+import { Spotify } from "mdx-embed/dist/components/spotify";
+import { Twitch } from "mdx-embed/dist/components/twitch";
+import { Twitter } from "mdx-embed/dist/components/twitter";
+import { Vimeo } from "mdx-embed/dist/components/vimeo";
+import { Wistia } from "mdx-embed/dist/components/wistia";
+import { YouTube } from "mdx-embed/dist/components/youtube";
+
 import Counter from './example-counter'
 import GithubTestRunner from './github-test-runner'
 import {
@@ -29,6 +43,7 @@ import {
 export const componentMap = {
   Counter,
   GithubTestRunner,
+
   Accordion,
   Tab,
   Tabs,
@@ -51,5 +66,20 @@ export const componentMap = {
   ol: Ol,
   ul: Ul,
   hr: Hr,
-  p: P
+  p: P,
+  
+  // mdx-embed
+  Airtable,
+  CodePen,
+  CodeSandbox,
+  Figma,
+  Gist,
+  Instagram,
+  SoundCloud,
+  Spotify,  
+  Twitch,
+  Twitter,
+  Vimeo,
+  Wistia,
+  YouTube,
 }

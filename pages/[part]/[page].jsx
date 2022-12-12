@@ -1,8 +1,6 @@
-import { componentMap } from 'components/component-mapper'
 import fs from 'fs'
 import GithubSlugger from 'github-slugger'
 import matter from 'gray-matter'
-import DocumentLayout from 'layouts/document'
 import toc from 'markdown-toc'
 import { useSession } from "next-auth/react"
 import { MDXRemote } from 'next-mdx-remote'
@@ -14,12 +12,14 @@ import externalLinks from 'remark-external-links'
 import remarkGfm from 'remark-gfm'
 import hints from 'remark-hint'
 import slug from 'remark-slug'
+import { useTina } from 'tinacms/dist/react'
+
+import { componentMap } from 'components/component-mapper'
+import DocumentLayout from 'layouts/document'
 import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
 import { CONTENT_PATH } from 'utils/mdxUtils'
-import { useTina } from 'tinacms/dist/react'
-import { staticRequest, gql, getStaticPropsForTina } from 'tinacms'
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
-import { useCallback, useEffect, useState } from 'react'
+
+import { staticRequest } from 'tinacms'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -54,7 +54,27 @@ export default function Page({ source, frontMatter, params, ...props }) {
     return "Loading or not authenticated..."
   }
 
-  
+  // const [content, setContent] = useState(source)
+
+  // useEffect(() => {
+  //   const fn = async () => {
+  //     const mark = await unified()
+  //       .use(rehypeParse)
+  //       .use(rehypeRemark)
+  //       .use(oembed)
+  //       .use(remarkStringify, {
+  //         bullet: '*',
+  //         fence: '~',
+  //         fences: true,
+  //         incrementListMarker: false
+  //       })
+  //       .process(content)
+  //     console.log(mark)
+  //     setContent(mark)
+  //   }
+  //   fn()
+  // }, [content])
+
   return (
     <DocumentLayout frontMatter={frontMatter}>
         <MDXRemote {...source} components={componentMap} />
@@ -63,6 +83,7 @@ export default function Page({ source, frontMatter, params, ...props }) {
 }
 
 export const getStaticProps = async ({ params }) => {
+
   // get file and split content into data and frontmatter
   let source = ''
   let ext = ''
@@ -87,7 +108,7 @@ export const getStaticProps = async ({ params }) => {
     components: componentMap,
     mdxOptions: {
       rehypePlugins: [rehypeMetaAsProps],
-      remarkPlugins: [emoji, externalLinks, slug, hints, breaks, remarkGfm]
+      remarkPlugins: [ emoji, externalLinks, slug, hints, remarkGfm, /*breaks, oembed*/ ]
     },
     scope: data,
   })
@@ -97,8 +118,8 @@ export const getStaticProps = async ({ params }) => {
     props: {
       params,
       source: mdxSource,
-      frontMatter: data,
       data: mdxSource,
+      frontMatter: data,
       query,
       variables: {
         relativePath
