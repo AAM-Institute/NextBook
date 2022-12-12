@@ -26,6 +26,7 @@ import { Wistia } from "mdx-embed/dist/components/wistia";
 import { YouTube } from "mdx-embed/dist/components/youtube";
 
 import Counter from './example-counter'
+import GithubTestRunner from './github-test-runner'
 import {
   Accordion,
   Blockquote,
@@ -55,6 +56,7 @@ import {
 export const componentMap = {
   // Example Counter Component
   Counter,
+  GithubTestRunner,
 
   // NextBook Components
   Accordion,

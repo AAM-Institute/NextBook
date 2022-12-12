@@ -3,7 +3,7 @@
   - Replace icons and branding with unique
   - rewrite scrollspy
   - dark mode improvements
-  - 
+  - search
  */
 import NavBar from 'components/navbar'
 import SideBar from 'components/sidebar'

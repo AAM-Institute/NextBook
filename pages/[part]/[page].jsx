@@ -42,6 +42,10 @@ export default function Page({ source, frontMatter, params, ...props }) {
     'guide/1-prerequisites',
     'guide/2-css-basics',
     'guide/3-css-basics',
+    'references',
+    'references/glossary',
+    'references/cheatsheet',
+    'references/resources',
   ]
 
   const { status } = useSession({

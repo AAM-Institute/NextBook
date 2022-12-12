@@ -7,10 +7,10 @@ module.exports = {
         {
           source: '/(.*)',
           headers: [
-            {
-              key: 'X-Frame-Options',
-              value: 'DENY',
-            },
+            // {
+            //   key: 'X-Frame-Options',
+            //   value: 'DENY',
+            // },
             // {
             //   key: 'Content-Security-Policy',
             //   value:

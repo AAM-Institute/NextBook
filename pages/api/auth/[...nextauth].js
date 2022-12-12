@@ -23,16 +23,23 @@ export const authOptions = {
             // Or you can return a URL to redirect to:
             // return '/unauthorized'
         },
-        async jwt({ token, account }) {
+        async redirect({ url, baseUrl, ...props }) {
+            console.log(url, baseUrl, props);
+            // Allows relative callback URLs
+            if (url.startsWith("/")) return `${baseUrl}${url}`
+            // Allows callback URLs on the same origin
+            else if (new URL(url).origin === baseUrl) return url
+            return baseUrl
+        },
+        async jwt({ token, _account }) {
             // Persist the OAuth access_token to the token right after signin
             // if (account) {
             //     return { ...token, accessToken: account.access_token };
             // }
             return token;
         },
-        async session({ session, token, user }) {
+        async session({ session, token, _user }) {
             // Send properties to the client, like an access_token from a provider.
-            console.log('user', user)
             return {
             token,
             // userId: user.id,
