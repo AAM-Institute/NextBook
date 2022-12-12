@@ -148,3 +148,9 @@ li p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* GitBook Overrides */
+.toc {
+  @apply sticky top-20 overflow-auto;
+  max-height: calc(100vh - 5rem);
+}

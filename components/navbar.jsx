@@ -10,7 +10,7 @@ function NavBar() {
   const router = useRouter()
 
   return (
-    <div className='flex pt-1 text-xs lg:text-sm max-h-full max-w-screen-2xl mx-auto'>
+    <div className='flex text-xs lg:text-sm max-h-full max-w-screen-2xl mx-auto'>
       <SideBarToggler />
       <nav className='text-left text-xs lg:text-sm pl-4 flex flex-auto space-x-1 text-gray-900 dark:text-[#FFFFFF]'>
         <div className='inline-flex max-h-full shrink max-w-xs'>
