@@ -4,6 +4,7 @@
   - rewrite scrollspy
   - dark mode improvements
   - search
+  - disable unauthed pages, make ux better
  */
 import NavBar from 'components/navbar'
 import SideBar from 'components/sidebar'
