@@ -33,13 +33,13 @@ This release contains major speed improvements and backwards **incompatible** ch
 
 - Migrated to `next-mdx-remote v.4` which now uses `MDX2`. This has some speed improvements and stricter MDX syntax checking. See [MDX2](https://mdxjs.com/blog/v2/)
 - Replaced some custom incompatible markdown plugins with MDX counterparts. These are:
-    - Subscript: was `~`, became `<sub>` tag.
-    - Superscript: was `^`, became `<sup>` tag.
-    - Mark (higlight): was `==`, became `<mark>` tag.
-    - Changed syntax for `Accordion` and `Tabs` components. See related documentation.
+  - Subscript: was `~`, became `<sub>` tag.
+  - Superscript: was `^`, became `<sup>` tag.
+  - Mark (higlight): was `==`, became `<mark>` tag.
+  - Changed syntax for `Accordion` and `Tabs` components. See related documentation.
 - Removed functionality
-    - Indented code. This was removed from `MDX2`. Use other ways to define fenced code blocks.
-    - Linking with angle brackets: This was removed from `MDX2`. Use other ways to define links.
+  - Indented code. This was removed from `MDX2`. Use other ways to define fenced code blocks.
+  - Linking with angle brackets: This was removed from `MDX2`. Use other ways to define links.
 
 ## What's New In NextBook 2.0?
 
