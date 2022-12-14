@@ -5,8 +5,17 @@ import { defineConfig } from 'tinacms'
   
   export default defineConfig({
     branch,
-    clientId: 'ddb42427-3f52-4848-b7c5-5ddc8c1694ff', // Get this from tina.io
-    token: '1deca975df0447d86b1f452bb66a5818c3311104', // Get this from tina.io
+    // Get this from tina.io
+    ...(process.env.NODE_ENV === 'production' ? {clientId: process.env.TINA_CLIENT_ID, token: process.env.TINA_CLIENT_TOKEN} : {}),
+        
+      // This is the path to your repository
+      // You can find this in the Tina Cloud dashboard
+      // repository: {
+      //   owner: 'tina-graphql-gateway',
+      //   name: 'tina-graphql-gateway',
+      //   branch,
+      // },
+      
     build: {
       outputFolder: 'admin',
       publicFolder: 'public',
