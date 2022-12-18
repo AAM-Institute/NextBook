@@ -5,6 +5,7 @@
   - dark mode improvements
   - search
   - disable unauthed pages, make ux better
+  - history
  */
 import NavBar from 'components/navbar'
 import SideBar from 'components/sidebar'
