@@ -19,7 +19,7 @@ import { useTina } from 'tinacms/dist/react'
 import { componentMap } from 'components/component-mapper'
 import DocumentLayout from 'layouts/document'
 import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
-import { contentMapping, CONTENT_PATH } from 'utils/mdxUtils'
+import { CONTENT_PATH } from 'utils/mdxUtils'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -86,7 +86,7 @@ export default function Page({ source, frontMatter, params, ...props }) {
 
   return (
     <DocumentLayout frontMatter={{...frontMatter, title: data?.article?.title }}>
-        <MDXRemote {...source} components={componentMap} />
+        <MDXRemote {...source} body={data?.article} components={componentMap} />
     </DocumentLayout>
   )
 }
