@@ -141,34 +141,34 @@ export const getStaticPaths = async () => {
   const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
   
   // merge page mdxPaths with tina
-  // const articlesListData = await staticRequest({
-  //   query: `
-  //     query {
-  //       articleConnection {
-  //         edges {
-  //           node {
-  //             _sys {
-  //               filename
-  //               relativePath
-  //             }
-  //             title
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `,
-  //   variables: {},
-  // })
+  const articlesListData = await staticRequest({
+    query: `
+      query {
+        articleConnection {
+          edges {
+            node {
+              _sys {
+                filename
+                relativePath
+              }
+              title
+            }
+          }
+        }
+      }
+    `,
+    variables: {},
+  })
   
-  // const paths = articlesListData.articleConnection.edges.map(edge => {
-  //   return {
-  //     params: { 
-  //       part: path.dirname(edge.node._sys.relativePath),
-  //       page: edge.node._sys.filename,
-  //       slug: edge.node._sys.filename 
-  //     },
-  //   }
-  // })
+  const paths = articlesListData.articleConnection.edges.map(edge => {
+    return {
+      params: { 
+        part: path.dirname(edge.node._sys.relativePath),
+        page: edge.node._sys.filename,
+        slug: edge.node._sys.filename 
+      },
+    }
+  })
 
   return {
     paths: mdxPaths,
