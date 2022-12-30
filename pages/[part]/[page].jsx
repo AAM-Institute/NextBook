@@ -171,7 +171,7 @@ export const getStaticPaths = async () => {
   })
 
   return {
-    paths: mdxPaths,
+    paths: {...mdxPaths, ...paths},
     fallback: false,
   }
 }
