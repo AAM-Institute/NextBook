@@ -138,10 +138,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  // Old way
-  // const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
-  
-  // merge page mdxPaths with tina
   const articlesListData = await staticRequest({
     query: `
       query {
@@ -161,6 +157,10 @@ export const getStaticPaths = async () => {
     variables: {},
   })
   
+  // Old way
+  const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
+  
+  // Tina way
   const paths = articlesListData.articleConnection.edges.map(edge => {
     return {
       params: { 
@@ -171,8 +171,10 @@ export const getStaticPaths = async () => {
     }
   })
 
+  // merge page mdxPaths with tina
+
   return {
-    paths,
+    paths: [...mdxPaths, ...paths],
     fallback: false,
   }
 }
