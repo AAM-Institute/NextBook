@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import { visit } from 'unist-util-visit'
-import { CONTENT_PATH } from './constants'
+
+export const CONTENT_PATH = path.join(process.cwd(), 'content')
 
 export const contentFilePaths = fs
   .readdirSync(CONTENT_PATH)
