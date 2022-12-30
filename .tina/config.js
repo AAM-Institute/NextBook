@@ -6,7 +6,9 @@ import { defineConfig } from 'tinacms'
   export default defineConfig({
     branch,
     // Get this from tina.io
-    ...(process.env.NODE_ENV === 'production' ? {clientId: process.env.TINA_CLIENT_ID, token: process.env.TINA_CLIENT_TOKEN} : {}),
+    token: '3d2c560acb11012c91c6b24a6346e7481a510683', // generated on app.tina.io,
+    clientId: '079e55fa-7e87-4474-9a3d-3ce0fc201179',
+    // ...(process.env.NODE_ENV === 'production' ? {clientId: process.env.TINA_CLIENT_ID, token: process.env.TINA_CLIENT_TOKEN} : {}),
         
       // This is the path to your repository
       // You can find this in the Tina Cloud dashboard
