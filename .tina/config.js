@@ -4,20 +4,20 @@ import { defineConfig } from 'tinacms'
   const branch = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||  process.env.HEAD || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || 'main'
   
   export default defineConfig({
-    branch,
     // Get this from tina.io
     token: '3d2c560acb11012c91c6b24a6346e7481a510683', // generated on app.tina.io,
     clientId: '079e55fa-7e87-4474-9a3d-3ce0fc201179',
     // ...(process.env.NODE_ENV === 'production' ? {clientId: process.env.TINA_CLIENT_ID, token: process.env.TINA_CLIENT_TOKEN} : {}),
-        
-      // This is the path to your repository
-      // You can find this in the Tina Cloud dashboard
-      // repository: {
-      //   owner: 'tina-graphql-gateway',
-      //   name: 'tina-graphql-gateway',
-      //   branch,
-      // },
-      
+    
+    // This is the path to your repository
+    // You can find this in the Tina Cloud dashboard
+    repository: {
+      owner: 'AAM-institute',
+      name: 'dev101',
+      branch,
+    },
+    branch,
+    
     build: {
       outputFolder: 'admin',
       publicFolder: 'public',

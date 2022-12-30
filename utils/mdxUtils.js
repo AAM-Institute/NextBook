@@ -16,18 +16,6 @@ export const contentFolders = fs
   .readdirSync(CONTENT_PATH)
   .filter((path) => !path.includes('.md'))
 
-/**
- * Generate an array of each content folder with pages:
- *
- *   [
- *     [ { part: 'foo', page: 'fooContent' } ],
- *     [
- *       { part: 'bar', page: 'barContent1' },
- *       { part: 'bar', page: 'barContent2' },
- *       { part: 'bar', page: 'barContent3' }
- *     ]
- *  ]
- */
 export const contentMapping = contentFolders.map((part) => {
   const pages = fs
     .readdirSync(path.join(CONTENT_PATH, part))
