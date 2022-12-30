@@ -29,11 +29,11 @@ const query = `query BlogPostQuery($relativePath: String!) {
 }`
 
 export default function Page({ source, frontMatter, params, ...props }) {
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  })
+  // const { data } = useTina({
+  //   query: props.query,
+  //   variables: props.variables,
+  //   data: props.data,
+  // })
   
   // Auth
   const publicRoutes = [
@@ -172,6 +172,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths: mdxPaths,
-    fallback: "blocking",
+    fallback: false,
   }
 }
