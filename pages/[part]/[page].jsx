@@ -138,7 +138,8 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
+  // Old way
+  // const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
   
   // merge page mdxPaths with tina
   const articlesListData = await staticRequest({
@@ -171,7 +172,7 @@ export const getStaticPaths = async () => {
   })
 
   return {
-    paths: {...mdxPaths, ...paths},
+    paths,
     fallback: false,
   }
 }
