@@ -19,7 +19,7 @@ import { useTina } from 'tinacms/dist/react'
 import { componentMap } from 'components/component-mapper'
 import DocumentLayout from 'layouts/document'
 import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
-import { CONTENT_PATH } from 'utils/mdxUtils'
+import { CONTENT_PATH } from '../../utils/constants'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {

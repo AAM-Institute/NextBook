@@ -7,7 +7,7 @@
     "url": "git://github.com/aam-institute/NextBook.git"
   },
   "scripts": {
-    "dev": "tinacms dev -c \"next\"\"\"",
+    "dev": "tinacms dev -c \"next\"",
     "dev:debug": "NODE_OPTIONS='--inspect' next dev",
     "dev:watch": "next-remote-watch ./content",
     "postbuild": "next-sitemap --config next-sitemap-config.js",
