@@ -14,7 +14,9 @@
     "build": "tinacms build && next build",
     "start": "tinacms build && next start",
     "export": "next build && next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "tinacms build && next build && git commit -am 'deploy' && git push"
+
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.1.5",
