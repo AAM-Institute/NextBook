@@ -6,6 +6,7 @@
   - search
   - disable unauthed pages, make ux better
   - history
+  - meta title/description
  */
 import NavBar from 'components/navbar'
 import SideBar from 'components/sidebar'

@@ -5,8 +5,8 @@ import { defineConfig } from 'tinacms'
   
   export default defineConfig({
     // Get this from tina.io
-    token: process.env.TINA_CLIENT_ID || '3d2c560acb11012c91c6b24a6346e7481a510683',
-    clientId: process.env.TINA_CLIENT_TOKEN || '079e55fa-7e87-4474-9a3d-3ce0fc201179',
+    clientId: process.env.TINA_CLIENT_ID || '079e55fa-7e87-4474-9a3d-3ce0fc201179',
+    token: process.env.TINA_CLIENT_TOKEN || 'd660c34da7e67487f0870bceef739d4b19e9de0f',
     // ...(process.env.NODE_ENV === 'production' ? {clientId: process.env.TINA_CLIENT_ID, token: process.env.TINA_CLIENT_TOKEN} : {}),
     
     // This is the path to your repository
