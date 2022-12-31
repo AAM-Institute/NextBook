@@ -5,7 +5,7 @@ import { defineConfig } from 'tinacms'
   
   export default defineConfig({
     // Get this from tina.io
-    clientId: process.env.TINA_CLIENT_ID || '079e55fa-7e87-4474-9a3d-3ce0fc201179',
+    clientId: process.env.TINA_CLIENT_ID || '8e14fe83-5b16-4170-84d4-979ba090a6c1',
     token: process.env.TINA_CLIENT_TOKEN || undefined,
     // ...(process.env.NODE_ENV === 'production' ? {clientId: process.env.TINA_CLIENT_ID, token: process.env.TINA_CLIENT_TOKEN} : {}),
     
