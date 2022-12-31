@@ -1,6 +1,10 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Dropdown } from "@nextui-org/react";
 
+const ADMINS = [
+  'admin@lacymorrow.com',
+  'jason.rogewitz@gmail.com'
+]
 
 const LoginBtn = () => {
   const { data: session } = useSession()
@@ -24,8 +28,8 @@ const LoginBtn = () => {
               case 'copy':
                 console.log('copy')
                 break
-              case 'settings':
-                console.log('settings')
+              case 'edit':
+                console.log('edit')
                 break
               case 'signout':
                 console.log('signout')
@@ -37,7 +41,9 @@ const LoginBtn = () => {
             }
           }}
         >
-          <Dropdown.Item key="settings">Settings</Dropdown.Item>
+          { ADMINS.includes(session.user.email) &&
+            <Dropdown.Item key="edit">Edit Page</Dropdown.Item>
+          }
           <Dropdown.Item key="signout" color="error" withDivider>
             Log out
           </Dropdown.Item>
