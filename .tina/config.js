@@ -5,6 +5,8 @@ import { defineConfig } from 'tinacms'
 
   console.log('*** Tina CMS Config ***')
   console.log('Tina is using branch: ', branch)
+  process.env.TINA_CLIENT_ID && console.log('Tina is using client id: ', process.env.TINA_CLIENT_ID)
+  process.env.TINA_CLIENT_TOKEN && console.log('Tina is using client token: ', process.env.TINA_CLIENT_TOKEN)
   
   export default defineConfig({
     // Get this from tina.io
