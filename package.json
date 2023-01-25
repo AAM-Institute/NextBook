@@ -16,7 +16,6 @@
     "export": "next build && next export",
     "lint": "next lint",
     "deploy": "tinacms build && next build && git commit -am 'deploy' && git push"
-
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.1.5",
@@ -55,7 +54,7 @@
     "remark-mark-plus": "^1.0.21",
     "remark-slug": "^7.0.1",
     "remark-sub-super": "^1.0.20",
-    "tinacms": "^1.1.0"
+    "tinacms": "^1.1.3"
   },
   "license": "MIT",
   "devDependencies": {
