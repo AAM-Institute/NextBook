@@ -161,20 +161,21 @@ export const getStaticPaths = async () => {
   const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
   
   // Tina way
-  const paths = articlesListData.articleConnection.edges.map(edge => {
-    return {
-      params: { 
-        part: path.dirname(edge.node._sys.relativePath),
-        page: edge.node._sys.filename,
-        slug: edge.node._sys.filename 
-      },
-    }
-  })
+  // const paths = articlesListData.articleConnection.edges.map(edge => {
+  //   return {
+  //     params: { 
+  //       part: path.dirname(edge.node._sys.relativePath),
+  //       page: edge.node._sys.filename,
+  //       slug: edge.node._sys.filename 
+  //     },
+  //   }
+  // })
 
   // merge page mdxPaths with tina
 
   return {
-    paths: [...mdxPaths, ...paths],
+    // paths: [...mdxPaths, ...paths],
+    paths: [...mdxPaths],
     fallback: false,
   }
 }
