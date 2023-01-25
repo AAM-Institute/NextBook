@@ -45,8 +45,8 @@ yarn.lock
 /.devcontainer
 
 # build artifacts
-sitemap.xml
-robots.txt
+# sitemap.xml
+# robots.txt
 /test-results/
 /playwright-report/
 /playwright/.cache/
