@@ -1,7 +1,7 @@
 import { defineConfig } from 'tinacms'
 
   // Your hosting provider likely exposes this as an environment variable
-  const branch = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||  process.env.HEAD || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || 'main'
+  const branch = process.env.NEXT_PUBLIC_TINA_BRANCH || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || process.env.HEAD || 'main'
   
   export default defineConfig({
     // Get this from tina.io
