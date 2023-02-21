@@ -50,7 +50,7 @@ export default function Page({ source, frontMatter, params, ...props }) {
 
   const { status } = useSession({
     // Specify pages that require authorization
-    required: !publicRoutes.includes(`${params?.part}${params?.page ? `/${params.page}` : ''}`),
+    required: process.env.NODE_ENV === 'production' && !publicRoutes.includes(`${params?.part}${params?.page ? `/${params.page}` : ''}`),
     
   })
 
