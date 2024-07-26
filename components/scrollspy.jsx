@@ -6,9 +6,8 @@
  * Lacy - November 2022: Added nextJS router support
  */
 
-import React from 'react'
 import classnames from 'classnames'
-import router from 'next/router'
+import React from 'react'
 import debounce from 'utils/debounce'
 import throttle from 'utils/throttle'
 
@@ -56,6 +55,10 @@ export default class Scrollspy extends React.Component {
 
 			if (!itemInView) {
 				itemInView = items[0]
+			}
+
+			if (!itemInView?.id) {
+				return
 			}
 
 			if (this.state.current !== itemInView.id) {
