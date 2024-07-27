@@ -1,7 +1,7 @@
-import InPageToc from 'components/in-page-toc'
-import PageNav from 'components/page-nav'
-import Text from 'components/text'
-import GlobalLayout from 'layouts/global'
+import InPageToc from '@/components/in-page-toc'
+import PageNav from '@/components/page-nav'
+import Text from '@/components/text'
+import GlobalLayout from '@/layouts/global'
 import { useEffect, useState } from 'react'
 
 export default function DocumentLayout({ children, frontMatter }) {

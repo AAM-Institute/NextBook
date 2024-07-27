@@ -1,5 +1,5 @@
-import SideBarContext from 'components/store/sidebar-context'
-import config from 'config/config.json'
+import SideBarContext from '@/components/store/sidebar-context'
+import config from '@/config/config.json'
 import Link from 'next/link'
 import { useContext, useEffect, useRef } from 'react'
 import { useClickAway, useMedia } from 'react-use'

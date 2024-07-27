@@ -1,9 +1,9 @@
-import ColorModeToggler from './colormode-toggler'
-import SideBarToggler from './sidebar-toggler'
-import config from 'config/config.json'
+import config from '@/config/config.json'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import ColorModeToggler from './colormode-toggler'
 import LoginBtn from './login-btn'
+import SideBarToggler from './sidebar-toggler'
 
 function NavBar() {
   const { branding, navbarItems } = config
@@ -19,23 +19,23 @@ function NavBar() {
 
               {branding.img && (
                 <img
-                src={branding.img}
-                alt={branding.alt || branding.title || 'logo'}
-                className='h-full hidden md:inline-block mr-4'
+                  src={branding.img}
+                  alt={branding.alt || branding.title || 'logo'}
+                  className='h-full hidden md:inline-block mr-4'
                 />
-                )}
+              )}
               {branding.initials && (
                 <span
-                className='border border-gray-300 rounded-sm mr-4 text-lg text-center font-bold mt-1 w-6 h-6 md:mt-0 md:w-8 md:h-8 inline-flex justify-center items-center'
-                title={branding.title}
+                  className='border border-gray-300 rounded-sm mr-4 text-lg text-center font-bold mt-1 w-6 h-6 md:mt-0 md:w-8 md:h-8 inline-flex justify-center items-center'
+                  title={branding.title}
                 >
                   {branding.initials}
                 </span>
               )}
               {branding.title && (
                 <span
-                className='hidden text-center md:inline-block font-semibold mr-4'
-                title={branding.title}
+                  className='hidden text-center md:inline-block font-semibold mr-4'
+                  title={branding.title}
                 >
                   {branding.title}
                 </span>
@@ -52,17 +52,17 @@ function NavBar() {
                 href={item.path}
                 key={item.path}
                 className={`border border-transparent hover:bg-gray-300 hover:text-gray-700 dark:hover:bg-gray-600
-                dark:hover:text-gray-50 px-2 py-2 rounded-md font-medium hidden md:inline-block ${
-                  router.query.page && item.path.includes(router.query.page)
-                  ? 'dark:bg-gray-700 dark:text-gray-50 bg-gray-300 text-gray-700'
-                  : 'dark:text-gray-300 text-gray-600'
-                }`}>
+                dark:hover:text-gray-50 px-2 py-2 rounded-md font-medium hidden md:inline-block ${router.query.page && item.path.includes(router.query.page)
+                    ? 'dark:bg-gray-700 dark:text-gray-50 bg-gray-300 text-gray-700'
+                    : 'dark:text-gray-300 text-gray-600'
+                  }`}>
 
                 {item.title}
 
               </Link>)
-            );}
-            )}
+            );
+          }
+          )}
         </div>
       </nav>
       <div className='inline-flex items-center'>

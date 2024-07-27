@@ -1,4 +1,4 @@
-import Scrollspy from 'components/scrollspy';
+import Scrollspy from '@/components/scrollspy';
 import { useEffect, useState } from 'react';
 import { Link } from './svg-icons';
 import Text from './text';
