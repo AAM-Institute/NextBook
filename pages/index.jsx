@@ -11,21 +11,26 @@ export default function HomePage() {
   }, [router])
 
   return (
-    <div className='mx-auto max-w-md'>
-      
-      <div className='text-center mt-32 text-3xl font-bold'>
-        Welcome To Dev101!
+    <>
+      <Head>
+        <title>Test</title>
+      </Head>
+      <div className='mx-auto max-w-md'>
+
+        <div className='text-center mt-32 text-3xl font-bold'>
+          Welcome To Dev101!
+        </div>
+        <div className='text-center'>
+          <p>This free course was created by the AAM institute to prepare you for the AAM Pilot Program.</p>
+          <p>We can use this page as a homepage/splash page or to redirect to content.</p>
+          <p>
+            Let&apos;s get started, redirecting you to the{' '}
+            <Link href={docsIndex} className='underline'>
+              documentation&hellip;
+            </Link>
+          </p>
+        </div>
       </div>
-      <div className='text-center'>
-        <p>This free course was created by the AAM institute to prepare you for the AAM Pilot Program.</p>
-        <p>We can use this page as a homepage/splash page or to redirect to content.</p>
-        <p>
-          Let&apos;s get started, redirecting you to the{' '}
-          <Link href={docsIndex} className='underline'>
-            documentation&hellip;
-          </Link>
-        </p>
-      </div>
-    </div>
+    </>
   );
 }

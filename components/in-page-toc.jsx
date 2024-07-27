@@ -1,8 +1,7 @@
+import Scrollspy from 'components/scrollspy';
 import { useEffect, useState } from 'react';
-import router from 'next/router';
-import Scrollspy from 'components/scrollspy'
-import Text from './text'
 import { Link } from './svg-icons';
+import Text from './text';
 
 function InPageTocElement(props) {
 	// Indent headings based on their level
@@ -30,12 +29,12 @@ function InPageToc({ tocRaw }) {
 	const [url, setUrl] = useState('')
 
 	const onUpdateHash = (hash) => {
-		setUrl(window.location.origin + window.location.pathname + hash)
+		// setUrl(window.location.origin + window.location.pathname + hash)
 	}
 
 	// on mount, set the initial hash
 	useEffect(() => {
-		setUrl(router.asPath)
+		// setUrl(router.asPath)
 	}, []);
 
 	if (tocIds.length) {

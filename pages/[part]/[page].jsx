@@ -6,7 +6,6 @@ import { useSession } from "next-auth/react"
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
-import breaks from 'remark-breaks'
 import emoji from 'remark-emoji'
 import externalLinks from 'remark-external-links'
 import remarkGfm from 'remark-gfm'
@@ -18,8 +17,8 @@ import { useTina } from 'tinacms/dist/react'
 
 import { componentMap } from 'components/component-mapper'
 import DocumentLayout from 'layouts/document'
+import { CONTENT_PATH, contentMapping } from 'utils/mdxUtils'
 import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
-import { contentMapping, CONTENT_PATH } from 'utils/mdxUtils'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {
@@ -34,7 +33,7 @@ export default function Page({ source, frontMatter, params, ...props }) {
     variables: props.variables,
     data: props.data,
   })
-  
+
   // Auth
   const publicRoutes = [
     'intro',
@@ -51,7 +50,7 @@ export default function Page({ source, frontMatter, params, ...props }) {
   const { status } = useSession({
     // Specify pages that require authorization
     required: process.env.NODE_ENV === 'production' && !publicRoutes.includes(`${params?.part}${params?.page ? `/${params.page}` : ''}`),
-    
+
   })
 
   if (status === "loading") {
@@ -85,8 +84,8 @@ export default function Page({ source, frontMatter, params, ...props }) {
   // }, [content])
 
   return (
-    <DocumentLayout frontMatter={{...frontMatter, title: data?.article?.title }}>
-        <MDXRemote {...source} body={data?.article} components={componentMap} />
+    <DocumentLayout frontMatter={{ ...frontMatter, ...(data?.article?.title ? { title: data.article.title } : {}) }}>
+      <MDXRemote {...source} body={data?.article} components={componentMap} />
     </DocumentLayout>
   )
 }
@@ -105,7 +104,7 @@ export const getStaticProps = async ({ params }) => {
     source = fs.readFileSync(`${filePath}${ext}`)
   }
   const { content, data } = matter(source)
-    
+
   // Generate in-page-toc data and add it to frontmatter scope
   if (!data.tocRaw) {
     const tocData = toc(content, { slugify: new GithubSlugger() })
@@ -117,7 +116,7 @@ export const getStaticProps = async ({ params }) => {
     components: componentMap,
     mdxOptions: {
       rehypePlugins: [rehypeMetaAsProps],
-      remarkPlugins: [ emoji, externalLinks, slug, hints, remarkGfm, /*breaks, oembed*/ ]
+      remarkPlugins: [emoji, externalLinks, slug, hints, remarkGfm, /*breaks, oembed*/]
     },
     scope: data,
   })
@@ -156,10 +155,10 @@ export const getStaticPaths = async () => {
     `,
     variables: {},
   })
-  
+
   // Old way
   const mdxPaths = contentMapping.flat().map((item) => ({ params: { ...item } }))
-  
+
   // Tina way
   // const paths = articlesListData.articleConnection.edges.map(edge => {
   //   return {

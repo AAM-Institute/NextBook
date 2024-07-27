@@ -154,7 +154,9 @@ const Heading = (props) => {
   const Tag = 'h' + props.level
 
   useEffect(() => {
-    setlocation(`${window.location.href}#${props.id}`)
+    // setlocation(`${window.location.origin}${window.location.pathname}#${props.id}`)
+    console.log(location)
+    // setlocation(`${window.location.href}#${props.id}`)
   }, [props.id])
 
   return (

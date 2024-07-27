@@ -16,7 +16,13 @@ import Head from 'next/head'
 
 export default function GlobalLayout({ title, part, description, children }) {
   const { projectTitle, projectURL, projectDescription } = config
-  const htmlTitle = part ? `${title} - ${part}` : title
+
+  let htmlTitle = title
+  if (part) {
+    htmlTitle = `${htmlTitle} - ${part}`
+  }
+
+  console.log(htmlTitle)
 
   return (
     <>
