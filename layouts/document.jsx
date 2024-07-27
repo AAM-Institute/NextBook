@@ -1,7 +1,7 @@
-import InPageToc from 'components/in-page-toc'
-import PageNav from 'components/page-nav'
-import Text from 'components/text'
-import GlobalLayout from 'layouts/global'
+import InPageToc from '@/components/in-page-toc'
+import PageNav from '@/components/page-nav'
+import Text from '@/components/text'
+import GlobalLayout from '@/layouts/global'
 import { useEffect, useState } from 'react'
 
 export default function DocumentLayout({ children, frontMatter }) {
@@ -33,7 +33,7 @@ export default function DocumentLayout({ children, frontMatter }) {
         >
           {title && <h1>{title}</h1>}
           {description && <p className='my-1 mb-8 text-sm md:text-xl tracking-wide text-gray-400'>{description}</p>}
-          
+
 
 
           <div className='md-content'>{children}</div>
@@ -48,13 +48,13 @@ export default function DocumentLayout({ children, frontMatter }) {
             </div>
           )}
           {tags && (
-            <div className='my-2 text-sm 2xl:text-base'>
+            <div className='flex flex-wrap gap-1 my-2 text-sm 2xl:text-base'>
               {/* <span>
                 <Text tid='Tags' />:
               </span> */}
               {tags.map((tag) => (
                 <span
-                  className='bg-gray-300 dark:bg-gray-700 rounded m-1 p-1 text-xs'
+                  className='bg-gray-300 dark:bg-gray-700 rounded p-1 text-xs'
                   key={tag}
                 >
                   {`#${tag}`}

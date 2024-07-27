@@ -8,9 +8,9 @@
   - history
   - meta title/description
  */
-import NavBar from 'components/navbar'
-import SideBar from 'components/sidebar'
-import config from 'config/config.json'
+import NavBar from '@/components/navbar'
+import SideBar from '@/components/sidebar'
+import config from '@/config/config.json'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 

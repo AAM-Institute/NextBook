@@ -15,10 +15,10 @@ import slug from 'remark-slug'
 import { staticRequest } from 'tinacms'
 import { useTina } from 'tinacms/dist/react'
 
-import { componentMap } from 'components/component-mapper'
-import DocumentLayout from 'layouts/document'
-import { CONTENT_PATH, contentMapping } from 'utils/mdxUtils'
-import rehypeMetaAsProps from 'utils/rehypeMetaAsProps'
+import { componentMap } from '@/components/component-mapper'
+import DocumentLayout from '@/layouts/document'
+import { CONTENT_PATH, contentMapping } from '@/utils/mdxUtils'
+import rehypeMetaAsProps from '@/utils/rehypeMetaAsProps'
 
 const query = `query BlogPostQuery($relativePath: String!) {
   article(relativePath: $relativePath) {

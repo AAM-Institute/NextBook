@@ -6,10 +6,10 @@
  * Lacy - November 2022: Added nextJS router support
  */
 
+import debounce from '@/utils/debounce'
+import throttle from '@/utils/throttle'
 import classnames from 'classnames'
 import React from 'react'
-import debounce from 'utils/debounce'
-import throttle from 'utils/throttle'
 
 const DEBOUNCE_HASH_DELAY = 300
 const THROTTLE_DELAY = 20

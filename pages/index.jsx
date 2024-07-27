@@ -12,9 +12,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Head>
-        <title>Test</title>
-      </Head>
       <div className='mx-auto max-w-md'>
 
         <div className='text-center mt-32 text-3xl font-bold'>

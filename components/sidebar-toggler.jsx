@@ -1,7 +1,7 @@
-import { Hamburger, Close } from './svg-icons'
+import { _ } from '@/components/text'
 import { useContext } from 'react'
 import SideBarContext from './store/sidebar-context'
-import { _ } from 'components/text'
+import { Close, Hamburger } from './svg-icons'
 
 const SideBarToggler = () => {
   const sideBarCtx = useContext(SideBarContext)
