@@ -1,4 +1,5 @@
 import Scrollspy from '@/components/scrollspy';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Link } from './svg-icons';
 import Text from './text';
@@ -27,14 +28,15 @@ function InPageToc({ tocRaw }) {
 
 	// Update current "copy link" button when the user scrolls
 	const [url, setUrl] = useState('')
+	const router = useRouter()
 
 	const onUpdateHash = (hash) => {
-		// setUrl(window.location.origin + window.location.pathname + hash)
+		setUrl(window.location.origin + window.location.pathname + hash)
 	}
 
 	// on mount, set the initial hash
 	useEffect(() => {
-		// setUrl(router.asPath)
+		setUrl(router.asPath)
 	}, []);
 
 	if (tocIds.length) {

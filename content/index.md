@@ -1,21 +1,13 @@
 ---
 part: Introduction
-title: Welcome to Dev101!
-updated: '2022-12-04'
-tags:
-  - intro
-  - welcome
-  - dev101
-description: >-
-  Welcome to Dev101! This is a free course that will teach you the basics of
-  coding.
+title: Welcome to NextBook!
 ---
 
-My name is Lacy Morrow, and I'll be your guide through the wonderful world of coding!
+![A screenshot of NexBook page. raw](https://next-book.vercel.app/screenshot.png)
 
-<div style={{ maxWidth: '480px', margin: '0 auto' }}>
-  ![That's me ^^](/images/photo-lacy.jpg "A photo of Lacy smiling")
-</div>
+**NextBook** is quick and easy way to buid technical books or documentation that support modern standards and run blazingly fast. It works by compiling markdown and MDX to static pages. This way, first content render on user's device is near instant.
+
+NextBook makes writing technical docs stupid simple while keeping featureset minimal but open for further extension.
 
 ## Getting Started
 
@@ -34,7 +26,7 @@ With the advantages of [Next.js](https://nextjs.com) and [React](https://reactjs
 
 ## What's New In NextBook 3.0?
 
-**We want to get you ahead.** When you graduate from our program, **you’ll have real product team experience** working in a development shop that other graduates from other programs won’t have. That’s going to help you **land a job** and perform better than all the other new hires, meaning more salary and job growth, **_faster_**
+This release contains major speed improvements and backwards **incompatible** changes. Most of these come from MDX2 removing some functionality and other old libraries still not supporting ES modules.
 
 - Migrated to `next-mdx-remote v.4` which now uses `MDX2`. This has some speed improvements and stricter MDX syntax checking. See [MDX2](https://mdxjs.com/blog/v2/)
 - Replaced some custom incompatible markdown plugins with MDX counterparts. These are:
@@ -77,31 +69,5 @@ With the advantages of [Next.js](https://nextjs.com) and [React](https://reactjs
 - ❤ Built on open-source,
 - 👍 And many more small details...
 
-#### But what do you mean by “Pilot”?
-
-AAM institute is **not currently live**. We’re doing a bunch of tests right now to create our final approach and guess what? You’re one of our lucky guinea pigs.
-
-We've put hours and hours into research to find the online sources and tools that we believe are the best, and we’ve combined them into this introductory course.
-
-We believe the process we’ve put together with these materials is the fastest and most fun way to get up to speed with coding basics.
-
-**This course is free for you because it’s a test. We are only opening it to a very small amount of people.** Can you help us out by letting me know how your experience goes, what questions you have and where you struggled most?
-
-**I’ll be with you every step of the way to help.**
-
-#### What happens when I complete Dev101
-
-Once you complete the free pilot for Dev101, **you’ll be eligible to join our AAM Pilot Program for free as well!**
-
-Spots are **EXTREMELY limited** in the AAM Pilot Program and will only be available for **a very short time**. We will be accepting only those that finish Dev101 first and have the best test results.
-
-So if you want to join our AAM Pilot Program for **free** (a ~$2,500 value), work hard on Dev101, finish it quickly, but make sure you learn the material and do well on the projects/tests!
-
-!> Warning: Do not skip anything!
-We have built this course very carefully, so **please do not skip anything!** I repeat, **do not skip anything!** We spent so much time cutting this down to the most important information only, so every step is essential.
-
-##### Good luck and thanks for joining the AAM community! We can’t wait to work with you.
-
-**My advice to you is to take this course seriously.**
-
-> It’s not easy. You have to tell yourself you can learn anything with enough time and focus.
+!> Use Right Tool For The Job 
+NextBook is not geared towards API documentation, rather it is optimised for tutorial/book style documentation. For API docs [ReadTheDocs](https://readthedocs.org/), [Docusaurus](https://docusaurus.io/) or plain [Sphinx](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) would be a better fit.
