@@ -3,154 +3,154 @@
 @tailwind utilities;
 
 :root {
-  --color-link: hsl(221, 79%, 60%);
-  --color-link-hover: hsl(221, 79%, 30%);
-  --color-link-visited: hsl(221, 79%, 42%);
-  --color-bg: rgba(132, 160, 225, 0.1);
+	--color-link: hsl(221, 79%, 60%);
+	--color-link-hover: hsl(221, 79%, 30%);
+	--color-link-visited: hsl(221, 79%, 42%);
+	--color-bg: rgba(132, 160, 225, 0.1);
 }
 
 /* GitBook Overrides */
 html {
-  scroll-behavior: smooth;
-  
-  /* Offset for fixed header */
-  scroll-padding-top: 100px; 
-  
-  body {
-      @apply text-gray-600;
-  }
+	scroll-behavior: smooth;
 
-  &:has(.dark) body {
-    @apply text-gray-300;
-  }
+	/* Offset for fixed header */
+	scroll-padding-top: 70px;
+
+	body {
+		@apply text-gray-600;
+	}
+
+	&:has(.dark) body {
+		@apply text-gray-300;
+	}
 }
 
 a {
-  @apply transition-colors duration-200;
+	@apply transition-colors duration-200;
 }
 
 a.current {
-  background-color: var(--color-bg);
-  color: var(--color-link);
+	background-color: var(--color-bg);
+	color: var(--color-link);
 }
 
 html.light .md-content a,
 html.light .toc li.active {
-  border-color: var(--color-link);
-  color: var(--color-link);
-  text-decoration: none;
+	border-color: var(--color-link);
+	color: var(--color-link);
+	text-decoration: none;
 }
 
 html.light .md-content a:hover,
 html.light .md-content a:focus {
-  color: var(--color-link-hover);
-  text-decoration: underline;
+	color: var(--color-link-hover);
+	text-decoration: underline;
 }
 
 html.light .md-content a:visited {
-  color: var(--color-link-visited);
+	color: var(--color-link-visited);
 }
 
 h1 {
-  @apply text-5xl font-bold my-5;
+	@apply text-5xl font-bold my-5;
 }
 
 h2 {
-  @apply text-4xl font-bold my-5;
+	@apply text-4xl font-bold my-5;
 }
 
 h3 {
-  @apply text-3xl font-bold my-5;
+	@apply text-3xl font-bold my-5;
 }
 
 h4 {
-  @apply text-2xl font-bold my-5;
+	@apply text-2xl font-bold my-5;
 }
 
 h5 {
-  @apply text-xl font-bold my-5;
+	@apply text-xl font-bold my-5;
 }
 
 h6 {
-  @apply text-lg font-bold my-5;
+	@apply text-lg font-bold my-5;
 }
 
 pre {
-  @apply rounded-sm overflow-auto mx-auto max-w-[88vw] md:max-w-[46vw] lg:max-w-[30vw] xl:max-w-[38vw] 2xl:max-w-[32vw];
+	@apply rounded-sm overflow-auto mx-auto max-w-[88vw] md:max-w-[46vw] lg:max-w-[30vw] xl:max-w-[38vw] 2xl:max-w-[32vw];
 }
 
 /* Diffs without line numbering */
 .clean .linenumber {
-  display: none !important;
+	display: none !important;
 }
 
 p {
-  @apply text-lg;
-  margin: 1em 0;
+	@apply text-lg;
+	margin: 1em 0;
 }
 
 /* Invert colors of svg's with excalidraw class */
 .dark .excalidraw {
-  filter: invert(100%) hue-rotate(180deg);
+	filter: invert(100%) hue-rotate(180deg);
 }
 
 .hint {
-  padding: 1em 1em 1em 1.4em;
-  margin: 1em 0 1em 0;
-  border-radius: 6px;
-  color: black;
-  border-left: 4px solid;
+	padding: 1em 1em 1em 1.4em;
+	margin: 1em 0 1em 0;
+	border-radius: 6px;
+	color: black;
+	border-left: 4px solid;
 }
 
 .hint a {
-  color: black;
+	color: black;
 }
 
 .dark .hint a {
-  color: white;
+	color: white;
 }
 
 .dark .hint {
-  color: white;
+	color: white;
 }
 
 .hint.tip {
-  background-color: rgba(152, 199, 197, 0.5);
-  border-color: rgba(152, 199, 197, 0.9);
+	background-color: rgba(152, 199, 197, 0.5);
+	border-color: rgba(152, 199, 197, 0.9);
 }
 
 .hint.warn {
-  background-color: rgba(255, 202, 103, 0.5);
-  border-color: rgba(255, 202, 103, 0.9);
+	background-color: rgba(255, 202, 103, 0.5);
+	border-color: rgba(255, 202, 103, 0.9);
 }
 
 .hint.error {
-  background-color: rgba(231, 154, 154, 0.5);
-  border-color: rgba(231, 154, 154, 0.9);
+	background-color: rgba(231, 154, 154, 0.5);
+	border-color: rgba(231, 154, 154, 0.9);
 }
 
 .hint::first-line {
-  font-weight: bold;
-  line-height: 2rem;
+	font-weight: bold;
+	line-height: 2rem;
 }
 
 /* Auto-generated li wraps everything in p, remove margins. */
 li p {
-  margin: 0;
+	margin: 0;
 }
 
 .summary p {
-  display: inline;
+	display: inline;
 }
 
 /* Use font antialiasing only in dark mode (makes text thinner) */
 .dark body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* GitBook Overrides */
 .toc {
-  @apply sticky top-20 overflow-auto;
-  max-height: calc(100vh - 5rem);
+	@apply sticky top-20 overflow-auto;
+	max-height: calc(100vh - 5rem);
 }

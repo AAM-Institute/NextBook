@@ -28,6 +28,7 @@
     "gray-matter": "^4.0.3",
     "markdown-toc": "^1.2.0",
     "mdx-embed": "^1.1.2",
+    "mdx-embed2": "^2.0.1",
     "next": "^14.2.5",
     "next-auth": "^4.24.7",
     "next-compose-plugins": "^2.2.1",
